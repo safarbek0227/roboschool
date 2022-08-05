@@ -1,7 +1,7 @@
 <template>
       <nav>
     <a href="/" class="logo">
-      <img alt="Vue logo" src="@/assets/logo.png" />
+      <img alt="logo" src="@/assets/logo.png" />
       <span class="text-gradient">RoboSchool</span>
     </a>
     <ul  :class="[navbar ? '' : 'active', '']" >

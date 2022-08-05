@@ -24,6 +24,11 @@ export default {
   margin-top: 50px;
 }
 img{
-  max-width: 250px;
+  width: 300px;
+}
+@media (max-width: 576px){
+  img{
+    width: 150px;
+  }
 }
 </style>
