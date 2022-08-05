@@ -4,7 +4,7 @@
       <img alt="Vue logo" src="@/assets/logo.png" />
       <span class="text-gradient">RoboSchool</span>
     </a>
-    <ul  :class="navbar">
+    <ul  :class="[navbar ? '' : 'active', '']" >
       <li>
         <router-link to="/">Home</router-link>
       </li>
@@ -26,7 +26,7 @@
       <router-link to="/about">
         <i class="fa-regular fa-cart-flatbed-boxes"></i>
       </router-link>
-      <i class="fa-regular fa-bars rb-md-block"  @click="toggleNavbar"></i>
+      <i class="fa-regular  rb-md-block" :class="[navbar ? 'fa-bars' : 'fa-x', 'fa-bars']"  @click="this.navbar = !this.navbar;" ></i>
     </div>
   </nav>
 
@@ -42,16 +42,18 @@
 
 
 <script>
+
+
 export default {
   data() {
     return {
-      navbar: '',
+      navbar: true,
     };
   },
-  methods: {
-    toggleNavbar() {
-        this.navbar = this.navbar === "" ? "active" : "";
-    },
+  watch: {
+    '$route' () {
+      this.navbar = true
+    }
   },
 };
 </script>

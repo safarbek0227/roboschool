@@ -1,230 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
-* {
-    font-family: 'Courgette', cursive;
-    font-style: normal;
-    outline: none;
-    box-sizing: border-box;
-    transition: all 0.5s;
-}
 h1,h2,h3,h4,h5,h6{
-    font-weight: 500;
+    font-style:normal;
+    font-weight: 600;
 }
-a{
-    color: #647eff;
-    text-decoration: none;
+h1{
+    font-size: 3rem;
 }
-strong{
-    color: #42b983;
+h2{
+    font-size: 2.5rem;
 }
-body {
-    margin: 0;
-    overflow-x: hidden;
-    font-family: "Kaushan Script", cursive !important;
-    color: #222121;
+h3{
+    font-size: 2.25rem;
 }
-.page{
-    padding-top: 50px;
+h4{
+    font-size: 2rem;
 }
-.text-gradient {
-    background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 8px;
+h5{
+    font-size: 1.75rem;
 }
-
-#app {
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+h6{
+    font-size: 1.5rem;
 }
-
-nav {
-    width: 100vw;
-    top: 0;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #42b983;
-    background: #fff;
-    padding: 5px 100px 5px 100px;
-    z-index: 900;
-}
-
-nav a {
-    /* font-family: "Kaushan Script", cursive !important; */
-
-}
-
-nav img {
-    width: 60px;
-    height: 60px;
-    display: inline;
-}
-
-nav span {
-    font-size: 32px;
-    font-family: 'Segoe Print';
-}
-
-nav ul {
-    display: flex;
-    font-size: x-large;
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav .logo {
-    display: flex;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #323658;
-}
-
-nav a:hover {
-    text-decoration: unset;
-    color: unset;
-}
-
-nav a.router-link-exact-active {
-    color: #42b983;
-}
-
-nav .menu-bar {
-    display: flex;
-    align-items: center;
-}
-
-.menu-bar i {
-    font-size: x-large;
-    margin: 0px 5px;
-}
-.menu-bar i:hover{
-    cursor: pointer;
-}
-nav .rb-md-block {
-    display: none;
-}
-
-nav .menu-bar a.router-link-exact-active {
-    color: unset;
-}
-
-@media (max-width: 1080px) {
-    nav {
-        padding: 5px 45px;
-        flex-wrap: wrap;
+@media (max-width:1200px){
+    h1{
+        font-size: 2.8rem;
     }
-
-    nav ul {
-        flex-wrap: wrap;
+    h2{
+        font-size: 2.3rem;
     }
-
-    nav img {
-        width: 50px;
-        height: 50px;
+    h3{
+        font-size: 1.95rem;
     }
-
-    nav span {
-        font-size: 22px;
+    h4{
+        font-size: 1.8rem;
     }
-
-    nav ul li {
-        margin: 0 5px;
+    h5{
+        font-size: 1.55rem;
     }
-
-    nav a {
-        font-size: large;
-    }
-
-    .menu-bar i {
-        font-size: x-large;
+    h6{
+        font-size: 1.3rem;
     }
 }
-
-@media (max-width: 768px) {
-    nav {
-        padding: 15px;
-        z-index: 8;
-        height: 90px;
-        justify-content: center;
+@media (max-width:992px){
+    h1{
+        font-size: 2.9rem;
     }
-
-    nav img {
-        width: 60px;
-        height: 60px;
+    h2{
+        font-size: 2.2rem;
     }
-
-    nav span {
-        font-size: xx-large;
+    h3{
+        font-size: 1.85rem;
     }
-
-    nav ul {
-        width: 300px;
-        height: 100vh;
-        position: fixed;
-        flex-direction: column;
-        margin: 0;
-        padding: 15px;
-        background: #fff;
-        box-shadow: 5px 8px 12px #eee;
-        z-index: -99;
-        border-top: 1px solid #42b983;
-        top: 90px;
-        left: -300px;
+    h4{
+        font-size: 1.7rem;
     }
-
-    nav ul.active {
-        left: 0;
+    h5{
+        font-size: 1.45rem;
     }
-
-    nav ul li {
-        margin: 15px 10px;
-    }
-
-    nav a {
-        font-size: x-large;
-    }
-
-    nav .menu-bar {
-        position: fixed;
-        width: 100vw;
-        justify-content: space-around;
-        background-color: #fff;
-        padding: 20px 20px;
-        bottom: 0;
-        box-shadow: -2px -1px 7px #eee;
-    }
-
-    nav .menu-bar a.router-link-exact-active {
-        color: #42b983;
-        background-color: #eee;
-        padding: 10px;
-        border-radius: 15px;
-        transition: all 0.2s;
-    }
-
-    nav .rb-md-block {
-        display: block;
+    h6{
+        font-size: 1.2rem;
     }
 }
-
-
-
-
+@media (max-width:768px){
+    h1{
+        font-size: 2.6rem;
+    }
+    h2{
+        font-size: 2.1rem;
+    }
+    h3{
+        font-size: 1.75rem;
+    }
+    h4{
+        font-size: 1.6rem;
+    }
+    h5{
+        font-size: 1.35rem;
+    }
+    h6{
+        font-size: 1.1rem;
+    }
+}
+@media (max-width:576px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.6rem;
+    }
+    h3{
+        font-size: 1.35rem;
+    }
+    h4{
+        font-size: 1.25rem;
+    }
+    h5{
+        font-size: 1.05rem;
+    }
+    h6{
+        font-size: 0.95rem;
+    }
+}
 /* For responsible */
-
 
 .container,
 .container-fluid,
