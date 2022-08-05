@@ -101,7 +101,9 @@ nav .menu-bar {
     font-size: x-large;
     margin: 0px 5px;
 }
-
+.menu-bar i:hover{
+    cursor: pointer;
+}
 nav .rb-md-block {
     display: none;
 }
