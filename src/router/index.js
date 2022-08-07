@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainNavbar from '../components/MainNavbar.vue'
 
 const routes = [
   {
     path: '/',
-    component: MainNavbar,
+    component: () => import('../components/MainNavbar.vue'),
     children: [
       {
         path: '',
@@ -38,6 +37,13 @@ const routes = [
       },
     ]
   },
+  {
+    path: '/learn',
+    component: () => import('../components/DashNavbar.vue'),
+    children:[
+
+    ]
+  }
   
 ]
 

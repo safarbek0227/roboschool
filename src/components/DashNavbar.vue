@@ -1,18 +1,9 @@
 <template>
-      <nav>
+  <nav>
     <a href="/" class="logo">
       <img alt="logo" src="@/assets/logo.png" />
       <span class="text-gradient">RoboSchool</span>
     </a>
-    <ul  :class="[navbar ? '' : 'active', '']" >
-      <li>
-        <router-link to="/">Home</router-link>
-      </li>
-      <li><router-link to="/learn">Learn</router-link></li>
-      <li><router-link to="/shop">Shop</router-link></li>
-      <li><router-link to="/news">New</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
-    </ul>
     <div class="menu-bar">
       <router-link to="/profile">
         <i class="fa-regular fa-user"></i>
@@ -29,7 +20,9 @@
       <i class="fa-regular  rb-md-block" :class="[navbar ? 'fa-bars' : 'fa-x', 'fa-bars']"  @click="this.navbar = !this.navbar;" ></i>
     </div>
   </nav>
-
+  <div class="sidebar">
+  fdsffdsf
+  </div>
 
   <router-view v-slot="{ Component }">
     <transition name="scale" mode="out-in">
@@ -42,6 +35,8 @@
 
 
 <script>
+
+
 export default {
   data() {
     return {
@@ -66,8 +61,9 @@ nav {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #42b983;
+    border-bottom-right-radius: 45px;
     background: #fff;
-    padding: 5px 100px 5px 100px;
+    padding: 5px 100px 5px 25px;
     z-index: 900;
 }
 
@@ -87,16 +83,6 @@ nav span {
     font-family: 'Segoe Print';
 }
 
-nav ul {
-    display: flex;
-    font-size: x-large;
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
 
 nav .logo {
     display: flex;
@@ -136,28 +122,24 @@ nav .rb-md-block {
 nav .menu-bar a.router-link-exact-active {
     color: unset;
 }
-
+.sidebar{
+  width: 300px;
+  height: calc(100vh - 85px);
+  margin-top: 85px;
+  background: #fff;
+  border-bottom-right-radius: 35px;
+  overflow: auto;
+  box-shadow: -6px 11px 11px 0px #eee;
+}
 @media (max-width: 1080px) {
     nav {
         padding: 5px 45px;
         flex-wrap: wrap;
     }
 
-    nav ul {
-        flex-wrap: wrap;
-    }
-
     nav img {
         width: 50px;
         height: 50px;
-    }
-
-    nav span {
-        font-size: 22px;
-    }
-
-    nav ul li {
-        margin: 0 5px;
     }
 
     nav a {
@@ -184,21 +166,6 @@ nav .menu-bar a.router-link-exact-active {
 
     nav span {
         font-size: xx-large;
-    }
-
-    nav ul {
-        width: 300px;
-        height: 100vh;
-        position: fixed;
-        flex-direction: column;
-        margin: 0;
-        padding: 15px;
-        background: #fff;
-        box-shadow: 5px 8px 12px #eee;
-        z-index: -99;
-        border-top: 1px solid #42b983;
-        top: 90px;
-        left: -300px;
     }
 
     nav ul.active {

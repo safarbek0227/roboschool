@@ -5,9 +5,10 @@
     <img src="@/assets/fixing-robot.png" alt="">
     <h1>Bizning<span class="text-gradient">RoboSchool</span>ga xush kelibsiz</h1>
     <h3>
-      Bizning saytda <strong>Arduino</strong> va <strong>robtotexnikani</strong> onlayn o'rganing.
+      Bizning saytda <a href="" class="text-primary">Arduino</a> va <a href="" class="text-primary">Robtotextnikani</a> onlayn o'rganing.
       O'zingizda kerakli buyumlarni bizning <a href="/shop"> sotuv bolimimizdan</a> sotib olishiz mumkin
     </h3>
+    <a href="/learn" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></a>
   </div>
 </transition>
 
@@ -24,11 +25,11 @@ export default {
   margin-top: 50px;
 }
 img{
-  width: 300px;
+  width: clamp(150px, 80%, 300px);
 }
-@media (max-width: 576px){
+/* @media (max-width: 576px){
   img{
     width: 150px;
   }
-}
+} */
 </style>
