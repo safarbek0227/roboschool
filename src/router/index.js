@@ -8,40 +8,44 @@ const routes = [
       {
         path: '',
         name: 'home',
-        component: () => import('../views/HomeView')
+        component: () => import('../views/MainNavbar/HomeView')
       },
       {
         path: 'about',
         name: 'about',
-        component: () => import('../views/AboutView.vue')
+        component: () => import('../views/MainNavbar/AboutView.vue')
       },
       {
         path: 'contact',
         name: 'contact',
-        component: () => import('../views/AboutView.vue')
+        component: () => import('../views/MainNavbar/AboutView.vue')
       },
       {
         path: 'shop',
         name: 'shop',
-        component: () => import('../views/AboutView.vue')
+        component: () => import('../views/MainNavbar/AboutView.vue')
       },
       {
         path: 'news',
         name: 'news',
-        component: () => import('../views/AboutView.vue')
+        component: () => import('../views/MainNavbar/AboutView.vue')
       },
       {
         path: 'profile',
         name: 'profile',
-        component: () => import('../views/AboutView.vue')
+        component: () => import('../views/MainNavbar/AboutView.vue')
       },
     ]
   },
   {
     path: '/learn',
     component: () => import('../components/DashNavbar.vue'),
-    children:[
-
+    children: [
+      {
+        path: '',
+        name: 'intro',
+        component: () => import('../views/DashNavbar/IntroPage.vue')
+      }
     ]
   }
   

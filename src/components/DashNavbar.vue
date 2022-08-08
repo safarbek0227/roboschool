@@ -17,26 +17,34 @@
       <router-link to="/about">
         <i class="fa-regular fa-cart-flatbed-boxes"></i>
       </router-link>
-      <i class="fa-regular  rb-md-block" :class="[navbar ? 'fa-bars' : 'fa-x', 'fa-bars']"  @click="this.navbar = !this.navbar;" ></i>
+      <i
+        class="fa-regular rb-md-block"
+        :class="[navbar ? 'fa-bars' : 'fa-x', 'fa-bars']"
+        @click="this.navbar = !this.navbar"
+      ></i>
     </div>
   </nav>
-  <div class="sidebar">
-  fdsffdsf
+  <div class="content">
+    <div class="sidebar" :class="[navbar ? '' : 'active', '']">
+    <div class="sticky-top">
+      <ul>
+        <li>Intro</li>
+      </ul>
+    </div>
+    </div>
+    <div class="page-data">
+      <router-view v-slot="{ Component }">
+        <transition name="scale" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
   </div>
-
-  <router-view v-slot="{ Component }">
-    <transition name="scale" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
-
-  
 </template>
 
 
 <script>
-
-
+// import '@/assets/dashNavbar.css'
 export default {
   data() {
     return {
@@ -44,162 +52,14 @@ export default {
     };
   },
   watch: {
-    '$route' () {
-      this.navbar = true
-    }
+    $route() {
+      this.navbar = true;
+    },
   },
 };
 </script>
 
 <style>
+@import url('@/assets/dashNavbar.css');
 
-nav {
-    width: 100vw;
-    top: 0;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #42b983;
-    border-bottom-right-radius: 45px;
-    background: #fff;
-    padding: 5px 100px 5px 25px;
-    z-index: 900;
-}
-
-nav a {
-    /* font-family: "Kaushan Script", cursive !important; */
-
-}
-
-nav img {
-    width: 60px;
-    height: 60px;
-    display: inline;
-}
-
-nav span {
-    font-size: 32px;
-    font-family: 'Segoe Print';
-}
-
-
-nav .logo {
-    display: flex;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #323658;
-}
-
-nav a:hover {
-    text-decoration: unset;
-    color: unset;
-}
-
-nav a.router-link-exact-active {
-    color: #42b983;
-}
-
-nav .menu-bar {
-    display: flex;
-    align-items: center;
-}
-
-.menu-bar i {
-    font-size: x-large;
-    margin: 0px 5px;
-}
-.menu-bar i:hover{
-    cursor: pointer;
-}
-nav .rb-md-block {
-    display: none;
-}
-
-nav .menu-bar a.router-link-exact-active {
-    color: unset;
-}
-.sidebar{
-  width: 300px;
-  height: calc(100vh - 85px);
-  margin-top: 85px;
-  background: #fff;
-  border-bottom-right-radius: 35px;
-  overflow: auto;
-  box-shadow: -6px 11px 11px 0px #eee;
-}
-@media (max-width: 1080px) {
-    nav {
-        padding: 5px 45px;
-        flex-wrap: wrap;
-    }
-
-    nav img {
-        width: 50px;
-        height: 50px;
-    }
-
-    nav a {
-        font-size: large;
-    }
-
-    .menu-bar i {
-        font-size: x-large;
-    }
-}
-
-@media (max-width: 768px) {
-    nav {
-        padding: 15px;
-        z-index: 8;
-        height: 90px;
-        justify-content: center;
-    }
-
-    nav img {
-        width: 60px;
-        height: 60px;
-    }
-
-    nav span {
-        font-size: xx-large;
-    }
-
-    nav ul.active {
-        left: 0;
-    }
-
-    nav ul li {
-        margin: 15px 10px;
-    }
-
-    nav a {
-        font-size: x-large;
-    }
-
-    nav .menu-bar {
-        position: fixed;
-        width: 100vw;
-        justify-content: space-around;
-        background-color: #fff;
-        padding: 20px 20px;
-        bottom: 0;
-        box-shadow: -2px -1px 7px #eee;
-    }
-
-    nav .menu-bar a.router-link-exact-active {
-        color: #42b983;
-        background-color: #eee;
-        padding: 10px;
-        border-radius: 15px;
-        transition: all 0.2s;
-    }
-
-    nav .rb-md-block {
-        display: block;
-    }
-}
 </style>
