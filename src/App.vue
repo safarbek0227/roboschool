@@ -1,6 +1,6 @@
 <template>
 <vue-headful
-            title="Roboschool1"
+            title="Roboschool -new changes"
             description="Roboschool online learn"
             og:image = @/assets/logo.png
             og:url = 'roboschool.netlify.com'
