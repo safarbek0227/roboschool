@@ -1,3 +1,4 @@
+
 <template>
   <nav>
     <a href="/" class="logo">
@@ -63,3 +64,4 @@ export default {
 @import url('@/assets/dashNavbar.css');
 
 </style>
+

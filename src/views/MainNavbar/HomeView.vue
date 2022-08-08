@@ -25,7 +25,7 @@ export default {
   margin-top: 50px;
 }
 img{
-  width: clamp(150px, 80%, 300px);
+  width: clamp(130px, 80%, 300px);
 }
 /* @media (max-width: 576px){
   img{

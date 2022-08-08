@@ -1,4 +1,5 @@
 <template>
+
       <nav>
     <a href="/" class="logo">
       <img alt="logo" src="@/assets/logo.png" />

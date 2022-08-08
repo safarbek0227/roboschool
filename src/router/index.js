@@ -44,7 +44,20 @@ const routes = [
       {
         path: '',
         name: 'intro',
-        component: () => import('../views/DashNavbar/IntroPage.vue')
+        component: () => import('../views/DashNavbar/IntroPage.vue'),
+        meta: {
+          title: 'Home Page - Example App',
+          metaTags: [
+            {
+              name: 'description',
+              content: 'The home page of our example app.'
+            },
+            {
+              property: 'og:description',
+              content: 'The home page of our example app.'
+            }
+          ]
+        }
       }
     ]
   }
