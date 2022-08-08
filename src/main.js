@@ -3,9 +3,9 @@ import App from './App.vue'
 import router from './router'
 import vueHeadful from 'vue-headful';
 
+const app = createApp(App)
 
-createApp(App).use(router).component('vue-headful', vueHeadful).mount('#app')
+app.use(router)
+app.component('vue-headful', vueHeadful);
+app.mount('#app')
 
-import Vue from 'vue';
-
-Vue;

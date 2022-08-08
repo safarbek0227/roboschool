@@ -1,11 +1,9 @@
 <template>
-<vue-headful
-            title="Roboschool -new changes"
-            description="Roboschool online learn"
-            og:image = @/assets/logo.png
-            og:url = 'roboschool.netlify.com'
+        <vue-headful
+            title="Title from vue-headful"
+            description="Description from vue-headful"
+            image='@/assets/fixing-robot.png'
         />
-  <router-view />
+  <RouterView />
 </template>
-<style>
-</style>
+

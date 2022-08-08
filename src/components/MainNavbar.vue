@@ -10,9 +10,9 @@
         <router-link to="/">Home</router-link>
       </li>
       <li><router-link to="/learn">Learn</router-link></li>
-      <li><router-link to="/shop">Shop</router-link></li>
-      <li><router-link to="/news">New</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
+      <li><router-link to="/about">Shop</router-link></li>
+      <li><router-link to="/about">New</router-link></li>
+      <li><router-link to="/about">Contact</router-link></li>
     </ul>
     <div class="menu-bar">
       <router-link to="/profile">
