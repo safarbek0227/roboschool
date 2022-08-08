@@ -52,11 +52,6 @@ export default {
       navbar: true,
     };
   },
-  watch: {
-    $route() {
-      this.navbar = true;
-    },
-  },
 };
 </script>
 

@@ -4,6 +4,18 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/learn',
+      component: () => import('../components/DashNavbar.vue'),
+      children: [
+        {
+          path:'',
+          name: 'intro',
+          component: () => import('../views/dashboard/intro.vue')
+          
+        }
+      ]
+    },
+    {
       path: '/',
       component: () => import('../components/MainNavbar.vue'),
       children: [
@@ -18,18 +30,6 @@ const router = createRouter({
           component: () => import('../views/main/AboutView.vue')
         }
 
-      ]
-    },
-    {
-      path: '/learn',
-      component: () => import('../components/DashNavbar.vue'),
-      children: [
-        {
-          path:'',
-          name: 'intro',
-          component: () => import('../views/dashboard/intro.vue')
-          
-        }
       ]
     }
   ]

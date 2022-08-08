@@ -8,7 +8,7 @@
       Bizning saytda <a href="" class="text-primary">Arduino</a> va <a href="" class="text-primary">Robtotextnikani</a> onlayn o'rganing.
       O'zingizda kerakli buyumlarni bizning <a href="/shop"> sotuv bolimimizdan</a> sotib olishiz mumkin
     </h3>
-    <a href="/learn" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></a>
+    <a href="/learn/" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></a>
   </div>
 </transition>
 
