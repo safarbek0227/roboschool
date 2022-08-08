@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkRoboschool"]=self["webpackChunkRoboschool"]||[]).push([[608],{8608:function(n,o,s){s.r(o),s.d(o,{default:function(){return h}});var u=s(3396);const a={class:"about page"},e=(0,u._)("h1",null,"This is an about page",-1),t=[e];function c(n,o){return(0,u.wg)(),(0,u.iD)("div",a,t)}var r=s(89);const i={},l=(0,r.Z)(i,[["render",c]]);var h=l}}]);
+//# sourceMappingURL=608.c0f10aed.js.map

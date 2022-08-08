@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+* {
+    font-family: 'Courgette', cursive;
+    font-style: normal;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 500;
+}
+a{
+    color: #647eff;
+}
+strong{
+    color: #42b983;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Kaushan Script", cursive !important;
+    background: #F2F4F5;
+    color: #222121;
+}
+.page{
+    padding: 90px 5px;
+}
+.text-gradient {
+    background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 8px;
+}
+
+#app {
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+
+
+
+
