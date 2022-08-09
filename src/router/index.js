@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // base: 'Roboschool',
 
   routes: [
     {
@@ -32,7 +33,8 @@ const router = createRouter({
           
         }
       ]
-    }
+    },
+    {path:'/*', component: () => import('../components/404.vue')}
   ]
 })
 
