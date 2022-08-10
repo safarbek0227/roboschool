@@ -7,9 +7,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #42b983;
-    border-bottom-right-radius: 45px;
     background: #fff;
-    padding: 5px 100px 5px 25px;
+    padding: 5px 100px 5px 100px;
     z-index: 900;
   }
   
@@ -26,6 +25,17 @@ nav {
   nav span {
     font-size: 32px;
     font-family: "Segoe Print";
+  }
+  
+  nav ul {
+    display: flex;
+    font-size: x-large;
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
   }
   
   nav .logo {
@@ -67,53 +77,27 @@ nav {
     color: unset;
   }
   
-  .content {
-    display: flex;
-  }
-  .sidebar {
-    padding: 0;
-    margin: 0;
-    box-shadow: -6px 11px 11px 0px #eee;
-  
-  }
-  .sticky-top{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    width: 280px;
-    height: 100vh;
-    background: #fff;
-    padding: 85px 5px 5px 0px;
-    border-bottom-right-radius: 35px;
-    overflow-y: auto;
-  }
-  .sticky-top ul{
-    list-style: none;
-    font-size: x-large;
-    text-align: left;
-
-  }
-  .sticky-top ul li{
-    margin: 10px  0px 5px 15px;
-  }
-  .sticky-top li.strong{
-    color: #647eff;
-    margin: 0;
-    font-weight: 600;
-  }
-  
-
-
-  
   @media (max-width: 1080px) {
     nav {
       padding: 5px 45px;
       flex-wrap: wrap;
     }
   
+    nav ul {
+      flex-wrap: wrap;
+    }
+  
     nav img {
       width: 50px;
       height: 50px;
+    }
+  
+    nav span {
+      font-size: 22px;
+    }
+  
+    nav ul li {
+      margin: 0 5px;
     }
   
     nav a {
@@ -140,6 +124,21 @@ nav {
   
     nav span {
       font-size: xx-large;
+    }
+  
+    nav ul {
+      width: 300px;
+      height: 100vh;
+      position: fixed;
+      flex-direction: column;
+      margin: 0;
+      padding: 15px;
+      background: #fff;
+      box-shadow: 5px 8px 12px #eee;
+      z-index: -99;
+      border-top: 1px solid #42b983;
+      top: 90px;
+      left: -300px;
     }
   
     nav ul.active {
@@ -175,12 +174,4 @@ nav {
     nav .rb-md-block {
       display: block;
     }
-    .sidebar {
-      position: absolute;
-      left: -300px;
-    }
-    .sidebar.active{
-      left: 0;
-    }
   }
-  

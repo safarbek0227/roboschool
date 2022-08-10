@@ -7,6 +7,22 @@
     box-sizing: border-box;
     transition: all 0.5s;
 }
+::-webkit-scrollbar {
+    width: 6px;
+    border: 0.2px solid #42d392;
+    border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:  -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
+    border-radius: 15px;
+}
 h1,h2,h3,h4,h5,h6{
     font-weight: 500;
 }

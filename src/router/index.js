@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   // base: 'Roboschool',
@@ -27,18 +28,22 @@ const router = createRouter({
       component: () => import('../components/DashNavbar.vue'),
       children: [
         {
-          path:'',
-          name: 'intro',
+          path:':id',
+          name: 'Intro',
           component: () => import('../views/dashboard/intro.vue')
           
         }
       ]
     },
-    {path:'/*', component: () => import('../components/404.vue')}
+    {path:'/:pathMatches(.*)*', component: () => import('../components/404.vue')}
   ]
 })
 
-
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  document.title = 'Roboschool'
+  next()
+})
 
 
 

@@ -29,7 +29,103 @@
     <div class="sidebar" :class="[navbar ? '' : 'active', '']">
     <div class="sticky-top">
       <ul>
-        <li>Intro</li>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
+      </ul>
+      <ul>
+        <li class="strong">
+          <router-link to="/intro/id">
+            Intro
+          </router-link>
+      </li>
+        <li>Instal</li>
+        <li>Overview</li>
+        <li>Lorem ipsum doll</li>
+        <li>Overview</li>
       </ul>
     </div>
     </div>
