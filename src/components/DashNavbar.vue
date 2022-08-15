@@ -27,114 +27,16 @@
   </nav>
   <div class="content">
     <div class="sidebar" :class="[navbar ? '' : 'active', '']">
-    <div class="sticky-top">
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-      <ul>
-        <li class="strong">
-          <router-link to="/intro/id">
-            Intro
-          </router-link>
-      </li>
-        <li>Instal</li>
-        <li>Overview</li>
-        <li>Lorem ipsum doll</li>
-        <li>Overview</li>
-      </ul>
-    </div>
+      <div class="overflow-auto">
+          <div class="part-navbar">
+            <h1>hello</h1>
+            <div class="dropdown-item">
+              <p>some information</p>
+            </div>
+          </div>
+      </div>
     </div>
     <div class="page-data">
-      <router-view v-slot="{ Component }">
-        <transition name="scale" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
     </div>
   </div>
 </template>

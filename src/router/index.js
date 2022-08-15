@@ -25,15 +25,8 @@ const router = createRouter({
     },
     {
       path: '/learn',
-      component: () => import('../components/DashNavbar.vue'),
-      children: [
-        {
-          path:':id',
-          name: 'Intro',
-          component: () => import('../views/dashboard/intro.vue')
-          
-        }
-      ]
+      name:'learn',
+      component: () => import('../components/DashNavbar.vue')
     },
     {path:'/:pathMatches(.*)*', component: () => import('../components/404.vue')}
   ]

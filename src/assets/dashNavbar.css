@@ -1,4 +1,6 @@
-
+body{
+  height: 10000vw;
+}
 nav {
     width: 100vw;
     top: 0;
@@ -71,32 +73,27 @@ nav {
     display: flex;
   }
   .sidebar {
-    padding: 0;
-    margin: 0;
-    box-shadow: -6px 11px 11px 0px #eee;
-  
-  }
-  .sticky-top{
-    position: -webkit-sticky;
-    position: sticky;
+    position: -webkit-fixed;
+    position: fixed;
     top: 0;
     width: 280px;
     height: 100vh;
     background: #fff;
     padding: 85px 5px 5px 0px;
     border-bottom-right-radius: 35px;
-    overflow-y: auto;
+    box-shadow: -6px 11px 11px 0px #eee;
+  
   }
-  .sticky-top ul{
+  .sidebar ul{
     list-style: none;
     font-size: x-large;
     text-align: left;
 
   }
-  .sticky-top ul li{
+  .sidebar ul li{
     margin: 10px  0px 5px 15px;
   }
-  .sticky-top li.strong{
+  .sidebar li.strong{
     color: #647eff;
     margin: 0;
     font-weight: 600;
@@ -176,7 +173,6 @@ nav {
       display: block;
     }
     .sidebar {
-      position: absolute;
       left: -300px;
     }
     .sidebar.active{
@@ -184,3 +180,9 @@ nav {
     }
   }
   
+  .dropdown-item{
+    display: none;
+  }
+  h1:focus .dropdown-item{
+    display: block;
+  }

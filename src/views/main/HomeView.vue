@@ -8,7 +8,8 @@
       Bizning saytda <a href="" class="text-primary">Arduino</a> va <a href="" class="text-primary">Robtotextnikani</a> onlayn o'rganing.
       O'zingizda kerakli buyumlarni bizning <a href="/shop"> sotuv bolimimizdan</a> sotib olishiz mumkin
     </h3>
-    <a href="/learn/" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></a>
+      <router-link to="learn" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></router-link>
+
   </div>
 </transition>
 
@@ -24,11 +25,11 @@ export default {
   margin-top: 50px;
 }
 img{
-  width: clamp(130px, 80%, 250px);
+  width: clamp(130px, 80%, 300px);
 }
-/* @media (max-width: 576px){
+@media (max-width: 768px){
   img{
-    width: 150px;
+      width: clamp(130px, 80%, 250px);
   }
-} */
+}
 </style>
