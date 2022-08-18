@@ -9,19 +9,23 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('../components/MainNavbar.vue'),
-      meta: {
-        title: 'About Page - Example App',
-        metaTags: [
-          {
-            name: 'description',
-            content: 'The about page of our example app.'
-          },
-          {
-            property: 'og:description',
-            content: 'The about page of our example app.'
-          }
-        ]
-      },
+      // meta: {
+      //   title: 'Roboschool- Online kurslar',
+      //   metaTags: [
+      //     {
+      //       name: 'author',
+      //       content: 'Solijonov Safarbek'
+      //     },
+      //     {
+      //       property: 'description',
+      //       content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+      //     },
+      //     {
+      //       property: 'og:description',
+      //       content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+      //     },
+      //   ]
+      // },
       children: [
         {
           path: '/',
