@@ -1527,6 +1527,9 @@ h6, .h6{
     text-decoration: none;
     font-weight: 500;
 }
+a:hover{
+    cursor: pointer;
+}
 .link:hover i{
     margin-left: 10px;
     transform: translateX();

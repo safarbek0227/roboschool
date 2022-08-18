@@ -1,7 +1,8 @@
 <template>
-<div class="page">
-<h1>this is a intro page</h1>
-
-</div>
-
+    <h1>hello</h1>
+    
 </template>
+<script>
+export default {
+};
+</script>

@@ -78,8 +78,9 @@ nav {
     top: 0;
     width: 280px;
     height: 100vh;
+    text-align: left;
     background: #fff;
-    padding: 85px 5px 5px 0px;
+    padding: 90px 5px 5px 25px;
     border-bottom-right-radius: 35px;
     box-shadow: -6px 11px 11px 0px #eee;
   
@@ -98,7 +99,12 @@ nav {
     margin: 0;
     font-weight: 600;
   }
-  
+  .page-data{
+    width: calc(100vw - 280px);
+    margin-left: 280px;
+    padding: 90px 5px;
+    text-align: left;
+  }
 
 
   
@@ -180,9 +186,3 @@ nav {
     }
   }
   
-  .dropdown-item{
-    display: none;
-  }
-  h1:focus .dropdown-item{
-    display: block;
-  }

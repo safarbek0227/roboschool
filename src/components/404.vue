@@ -37,7 +37,9 @@
 
     <transition name="scale" mode="out-in">
       <div class="page">
-        <h1>404 page not found</h1>
+        <img src="/images/404.png" alt="" style="width: clamp(200px, 75%, 700px  );">
+        <h2><a @click="$router.go(-1)" class="h3 unstyle text-gradient link">Orqaga qaytish <i class="fa-light fa-arrow-right-long"></i></a></h2>
+        
       </div>
     </transition>
 
@@ -61,4 +63,12 @@ export default {
 
 <style>
   @import url('@/assets/navbar.css');
+  .page{
+    display: flex;
+    padding: 50px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 </style>

@@ -58,8 +58,23 @@ body {
     text-align: center;
     color: #2c3e50;
 }
+.text-warning{
+    color: #FFC801;
+}
+.bg-warning{
+    color: #FFC801;
+}
+.text-primary{
+    color: #647eff;
+}
+.bg-primary{
+    background: #647eff;
+}
 
-
-
-
+.text-succes{
+    color: #42d392;
+}
+.bg-succes{
+    background: #42d392;
+}
 

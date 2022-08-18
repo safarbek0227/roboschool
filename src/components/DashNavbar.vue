@@ -28,15 +28,22 @@
   <div class="content">
     <div class="sidebar" :class="[navbar ? '' : 'active', '']">
       <div class="overflow-auto">
-          <div class="part-navbar">
-            <h1>hello</h1>
-            <div class="dropdown-item">
-              <p>some information</p>
-            </div>
+        <div class="part-navbar">
+          <div class="header-content">
+            <h4 style="color: #ffc801">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h4>
           </div>
+        </div>
       </div>
     </div>
     <div class="page-data">
+      <router-view v-slot="{ Component }">
+        <transition name="scale" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
@@ -54,7 +61,6 @@ export default {
 </script>
 
 <style>
-@import url('@/assets/dashNavbar.css');
-
+@import url("@/assets/dashNavbar.css");
 </style>
 

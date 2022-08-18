@@ -9,6 +9,19 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('../components/MainNavbar.vue'),
+      meta: {
+        title: 'About Page - Example App',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'The about page of our example app.'
+          },
+          {
+            property: 'og:description',
+            content: 'The about page of our example app.'
+          }
+        ]
+      },
       children: [
         {
           path: '/',
@@ -25,18 +38,63 @@ const router = createRouter({
     },
     {
       path: '/learn',
-      name:'learn',
-      component: () => import('../components/DashNavbar.vue')
+      component: () => import('../components/DashNavbar.vue'),
+      children: [
+        {
+          path:'/',
+          name: 'intro',
+          component: () => import('../views/dashboard/intro.vue')
+        },
+        {
+          path: ':name',
+          name: 'arduino docs',
+          component: () => import('../views/dashboard/doc.vue')
+        }
+      ]
     },
     {path:'/:pathMatches(.*)*', component: () => import('../components/404.vue')}
   ]
 })
 
+
 router.beforeEach((to, from, next) => {
-  console.log(to)
-  document.title = 'Roboschool'
-  next()
-})
+  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+
+  const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
+
+  const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
+
+  if(nearestWithTitle) {
+    document.title = nearestWithTitle.meta.title;
+  } else if(previousNearestWithMeta) {
+    document.title = previousNearestWithMeta.meta.title;
+  }
+
+  // Remove any stale meta tags from the document using the key attribute we set below.
+  Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
+
+  // Skip rendering meta tags if there are none.
+  if(!nearestWithMeta) return next();
+
+  // Turn the meta tag definitions into actual elements in the head.
+  nearestWithMeta.meta.metaTags.map(tagDef => {
+    const tag = document.createElement('meta');
+
+    Object.keys(tagDef).forEach(key => {
+      tag.setAttribute(key, tagDef[key]);
+    });
+
+    // We use this to track which meta tags we create so we don't interfere with other ones.
+    tag.setAttribute('data-vue-router-controlled', '');
+
+    return tag;
+  })
+  // Add the meta tags to the document head.
+  .forEach(tag => document.head.appendChild(tag));
+
+  next();
+});
+
 
 
 
