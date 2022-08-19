@@ -7,7 +7,7 @@ const router = createRouter({
 
   routes: [
     {
-      path: '/',
+      path: '',
       component: () => import('../components/MainNavbar.vue'),
       meta: {
         title: 'Roboschool- Online kurslar',
@@ -28,7 +28,7 @@ const router = createRouter({
       },
       children: [
         {
-          path: '/',
+          path: '',
           name: 'home',
           component: () => import('../views/main/HomeView.vue')
         },
