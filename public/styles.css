@@ -16,7 +16,7 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 500;
 }
 a{
-    color:  #96B8F3;
+    color: #647eff;
 }
 strong{
     color: #42b983;
@@ -27,7 +27,6 @@ body {
     overflow-x: hidden;
     font-family: "Kaushan Script", cursive !important;
     background: #F2F4F5;
-    color: #222121;
 }
 .page{
     padding: 90px 5px;

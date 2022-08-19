@@ -10,7 +10,7 @@ nav {
     border-bottom-right-radius: 45px;
     background: #F8FBFE;
     padding: 5px 100px 5px 25px;
-    z-index: 900;
+    z-index: 90;
   }
   
   nav a {
@@ -73,15 +73,19 @@ nav {
   .sidebar {
     position: -webkit-fixed;
     position: fixed;
+    display: flex;
     top: 0;
     width: 280px;
     height: 100vh;
     text-align: left;
     background: #F8FBFE;
-    padding: 90px 5px 5px 25px;
+    padding: 90px 10px 45px 10px;
     border-bottom-right-radius: 35px;
-    box-shadow: -6px 11px 11px 0px #eee;
-  
+    box-shadow: -6px 11px 11px 0px #eee;  
+    border: 1px solid #00ca4e;
+    justify-content: space-around;
+    flex-direction: column;
+    z-index: 5;
   }
   .sidebar .part-learn{
     direction:ltr;
@@ -150,7 +154,7 @@ nav {
     }
   
     nav span {
-      font-size: xx-large;
+      font-size: x-large;
     }
   
     nav ul.active {
@@ -168,13 +172,16 @@ nav {
     nav .menu-bar {
       position: fixed;
       width: 100vw;
+      height: 60px;
       justify-content: space-around;
       background-color: #fff;
       padding: 20px 20px;
       bottom: 0;
       box-shadow: -2px -1px 7px #eee;
     }
-  
+    .menu-bar i{
+      font-size: xx-large;
+    }
     nav .menu-bar a.router-link-exact-active {
       color: #42b983;
       background-color: #eee;
@@ -188,6 +195,7 @@ nav {
     }
     .sidebar {
       left: -300px;
+      padding-bottom: 85px ;
     }
     .sidebar.active{
       left: 0;
@@ -196,6 +204,18 @@ nav {
       width: 100vw;
       margin-left: 0;
     }
+    .sidebar .part-learn h5{
+      font-size: 20px;
+    }
+    .sidebar .part-learn ul{
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 576px) {
+    .menu-bar i{
+      font-size: x-large;
+    }
+    
   }
   
   .card {
@@ -204,7 +224,19 @@ nav {
     background-color: #F8FBFE;
     border-radius: 8px;
     z-index: 1;
-    border: 1px solid #00ca4e;
+    box-shadow: inset 5px 5px 10px #a9a9aa77,
+    inset -5px -5px 10px #ffffff7e;
+   }
+   .bottom-content{
+    box-shadow: inset 5px 5px 10px #a9a9aa77,
+    inset -5px -5px 10px #ffffff7e;
+    border-radius: 8px;
+    padding: 10px 10%;
+   }
+   .bottom-content i{
+    font-size: xx-large;
+    margin: 0 10px;
+    color: #3b3b3b;
    }
    
    .tools {

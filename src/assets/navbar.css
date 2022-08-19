@@ -156,11 +156,15 @@ nav {
     nav .menu-bar {
       position: fixed;
       width: 100vw;
+      height: 60px;
       justify-content: space-around;
       background-color: #F8FBFE;
       padding: 20px 20px;
       bottom: 0;
       box-shadow: -2px -1px 7px #eee;
+    }
+    .menu-bar i{
+      font-size: xx-large;
     }
   
     nav .menu-bar a.router-link-exact-active {
@@ -174,4 +178,10 @@ nav {
     nav .rb-md-block {
       display: block;
     }
+  }
+  @media (max-width: 576px) {
+    .menu-bar i{
+      font-size: x-large;
+    }
+    
   }

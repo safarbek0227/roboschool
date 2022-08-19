@@ -59,7 +59,7 @@
             <ul>
               <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
               <li><router-link :to="{name: 'intro'}">setup</router-link></li>
-              <li><router-link :to="{name: 'intro'}">Quick start</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
             </ul>
           </div>
           <div class="part-learn">
@@ -70,16 +70,85 @@
             <ul>
               <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
               <li><router-link :to="{name: 'intro'}">setup</router-link></li>
-              <li><router-link :to="{name: 'intro'}">Quick start</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-primary m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-warning m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-succes m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-primary m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-warning m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-succes m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="bottom-content">
-        <a href=""></a>
+        <a href="https://t.me/RoboschoolUz"><i class="fa-brands fa-telegram"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
-    <router-view v-slot="{ Component }" @click="this.navbar = !this.navbar">
+    <router-view v-slot="{ Component }" @click="this.navbar = true">
       <transition name="scale-slide">
         <component :is="Component" />
       </transition>

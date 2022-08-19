@@ -35,7 +35,7 @@
     </div>
   </nav>
 
-  <router-view v-slot="{ Component }" @click="this.navbar = !this.navbar">
+  <router-view v-slot="{ Component }" @click="this.navbar = true">
     <transition name="scale" mode="out-in">
       <component :is="Component" />
     </transition>
