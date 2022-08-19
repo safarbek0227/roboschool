@@ -5,7 +5,7 @@
       <img alt="logo" src="@/assets/logo.png" />
       <span class="text-gradient">RoboSchool</span>
     </a>
-    <div class="menu-bar">
+    <div class="menu-bar" >
       <router-link to="/profile">
         <i class="fa-regular fa-user"></i>
       </router-link>
@@ -27,24 +27,63 @@
   </nav>
   <div class="content">
     <div class="sidebar" :class="[navbar ? '' : 'active', '']">
-      <div class="overflow-auto">
-        <div class="part-navbar">
-          <div class="header-content">
-            <h4 style="color: #ffc801">
+      <div class="card">
+        <div class="tools">
+          <div class="circle">
+            <span class="red box"></span>
+          </div>
+          <div class="circle">
+            <span class="yellow box"></span>
+          </div>
+          <div class="circle">
+            <span class="green box"></span>
+          </div>
+        </div>
+        <div class="card__content">
+          <div class="part-learn">
+            <h5 class="text-primary m-0">
               <i class="fa-solid fa-book-open conic-gradient"></i>
               Intro
-            </h4>
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'home'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-warning m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'intro'}">Quick start</router-link></li>
+            </ul>
+          </div>
+          <div class="part-learn">
+            <h5 class="text-succes m-0">
+              <i class="fa-solid fa-book-open conic-gradient"></i>
+              Intro
+            </h5>
+            <ul>
+              <li><router-link :to="{ name: 'docs', params: { name: 'hello' }}">Introduction</router-link></li>
+              <li><router-link :to="{name: 'intro'}">setup</router-link></li>
+              <li><router-link :to="{name: 'intro'}">Quick start</router-link></li>
+            </ul>
           </div>
         </div>
       </div>
+      <div class="bottom-content">
+        <a href=""></a>
+      </div>
     </div>
-    <div class="page-data">
-      <router-view v-slot="{ Component }">
-        <transition name="scale" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </div>
+    <router-view v-slot="{ Component }" @click="this.navbar = !this.navbar">
+      <transition name="scale-slide">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 

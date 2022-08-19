@@ -1,6 +1,4 @@
-body{
-  height: 10000vw;
-}
+
 nav {
     width: 100vw;
     top: 0;
@@ -10,7 +8,7 @@ nav {
     justify-content: space-between;
     border-bottom: 1px solid #42b983;
     border-bottom-right-radius: 45px;
-    background: #fff;
+    background: #F8FBFE;
     padding: 5px 100px 5px 25px;
     z-index: 900;
   }
@@ -79,33 +77,43 @@ nav {
     width: 280px;
     height: 100vh;
     text-align: left;
-    background: #fff;
+    background: #F8FBFE;
     padding: 90px 5px 5px 25px;
     border-bottom-right-radius: 35px;
     box-shadow: -6px 11px 11px 0px #eee;
   
   }
-  .sidebar ul{
+  .sidebar .part-learn{
+    direction:ltr;
+    margin: 25px 0 0 15px;
+  }
+  .sidebar .part-learn h5{
+    font-size: 25px;
+  }
+  .sidebar .part-learn ul{
     list-style: none;
-    font-size: x-large;
     text-align: left;
-
+    list-style: none;
+    font-weight: unset;
+    font-size: x-large;
   }
-  .sidebar ul li{
-    margin: 10px  0px 5px 15px;
+  .sidebar .part-learn ul a{
+    color: unset;
+    text-decoration: none;
   }
-  .sidebar li.strong{
-    color: #647eff;
-    margin: 0;
-    font-weight: 600;
+  .sidebar .part-learn ul a.router-link-exact-active {
+    color: #42b983;
+    padding: 10px;
+    transition: all 0.2s;
   }
   .page-data{
+    background-color: #F2F4F5;
     width: calc(100vw - 280px);
-    margin-left: 280px;
+    min-height: 100vh;
+    margin-left: 300px;
     padding: 90px 5px;
     text-align: left;
   }
-
 
   
   @media (max-width: 1080px) {
@@ -184,5 +192,72 @@ nav {
     .sidebar.active{
       left: 0;
     }
+    .page-data{
+      width: 100vw;
+      margin-left: 0;
+    }
   }
   
+  .card {
+    margin: 5px;
+    height: 80%;
+    background-color: #F8FBFE;
+    border-radius: 8px;
+    z-index: 1;
+    border: 1px solid #00ca4e;
+   }
+   
+   .tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+   }
+   
+   .circle {
+    padding: 0 4px;
+   }
+   
+   .box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+   }
+   .card__content{
+    height: 90%;
+    overflow-y: auto;
+   }
+   
+   .red {
+    background-color: #ff605c;
+   }
+   
+   .yellow {
+    background-color: #ffbd44;
+   }
+   
+   .green {
+    background-color: #00ca4e;
+   }
+   
+
+   .scale-slide-enter-active,
+   .scale-slide-leave-active {
+    z-index: -5;
+     position: absolute;
+     transition: all 0.85s ease;
+   }
+   .scale-slide-enter-from {
+     left: -100%;
+   }
+   .scale-slide-enter-to {
+     left: 0%;
+   }
+   .scale-slide-leave-from {
+     transform: scale(1);
+   }
+   .scale-slide-leave-to {
+     transform: scale(0.8);
+   }

@@ -9,23 +9,23 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('../components/MainNavbar.vue'),
-      // meta: {
-      //   title: 'Roboschool- Online kurslar',
-      //   metaTags: [
-      //     {
-      //       name: 'author',
-      //       content: 'Solijonov Safarbek'
-      //     },
-      //     {
-      //       property: 'description',
-      //       content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
-      //     },
-      //     {
-      //       property: 'og:description',
-      //       content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
-      //     },
-      //   ]
-      // },
+      meta: {
+        title: 'Roboschool- Online kurslar',
+        metaTags: [
+          {
+            name: 'author',
+            content: 'Solijonov Safarbek'
+          },
+          {
+            property: 'description',
+            content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+          },
+          {
+            property: 'og:image',
+            content: "/logo.png"
+          }
+        ]
+      },
       children: [
         {
           path: '/',
@@ -43,15 +43,32 @@ const router = createRouter({
     {
       path: '/learn',
       component: () => import('../components/DashNavbar.vue'),
+      meta: {
+        title: 'Roboschool- Online kurslar',
+        metaTags: [
+          {
+            name: 'author',
+            content: 'Solijonov Safarbek'
+          },
+          {
+            property: 'description',
+            content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+          },
+          {
+            property: 'og:image',
+            content: "/logo.png"
+          }
+        ]
+      },
       children: [
         {
-          path:'/',
+          path:'',
           name: 'intro',
           component: () => import('../views/dashboard/intro.vue')
         },
         {
           path: ':name',
-          name: 'arduino docs',
+          name: 'docs',
           component: () => import('../views/dashboard/doc.vue')
         }
       ]
@@ -77,23 +94,18 @@ router.beforeEach((to, from, next) => {
   // Remove any stale meta tags from the document using the key attribute we set below.
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
 
-  // Skip rendering meta tags if there are none.
   if(!nearestWithMeta) return next();
 
-  // Turn the meta tag definitions into actual elements in the head.
   nearestWithMeta.meta.metaTags.map(tagDef => {
     const tag = document.createElement('meta');
 
     Object.keys(tagDef).forEach(key => {
       tag.setAttribute(key, tagDef[key]);
     });
-
-    // We use this to track which meta tags we create so we don't interfere with other ones.
     tag.setAttribute('data-vue-router-controlled', '');
 
     return tag;
   })
-  // Add the meta tags to the document head.
   .forEach(tag => document.head.appendChild(tag));
 
   next();

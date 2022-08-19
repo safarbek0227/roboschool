@@ -8,26 +8,15 @@
     transition: all 0.5s;
 }
 ::-webkit-scrollbar {
-    width: 6px;
-    border: 0.2px solid #42d392;
-    border-radius: 5px;
+    display: none;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    border-radius: 5px;
-}
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background:  -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
-    border-radius: 15px;
-}
 h1,h2,h3,h4,h5,h6{
     font-weight: 500;
 }
 a{
-    color: #647eff;
+    color:  #96B8F3;
 }
 strong{
     color: #42b983;
@@ -58,23 +47,3 @@ body {
     text-align: center;
     color: #2c3e50;
 }
-.text-warning{
-    color: #FFC801;
-}
-.bg-warning{
-    color: #FFC801;
-}
-.text-primary{
-    color: #647eff;
-}
-.bg-primary{
-    background: #647eff;
-}
-
-.text-succes{
-    color: #42d392;
-}
-.bg-succes{
-    background: #42d392;
-}
-

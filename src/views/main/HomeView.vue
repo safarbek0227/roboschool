@@ -5,7 +5,7 @@
     <img src="@/assets/fixing-robot.png" alt="">
     <h1>Bizning<span class="text-gradient">RoboSchool</span>ga xush kelibsiz</h1>
     <h3>
-      Bizning saytda <a href="" class="text-primary">Arduino</a> va <a href="" class="text-primary">Robtotextnikani</a> onlayn o'rganing.
+      Bizning saytda <a href="">Arduino</a> va <a href="">Robtotextnikani</a> onlayn o'rganing.
       O'zingizda kerakli buyumlarni bizning <a href="/shop"> sotuv bolimimizdan</a> sotib olishiz mumkin
     </h3>
       <router-link to="learn" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></router-link>

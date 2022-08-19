@@ -7,7 +7,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #42b983;
-    background: #fff;
+    background: #F8FBFE;
     padding: 5px 100px 5px 100px;
     z-index: 900;
   }
@@ -133,7 +133,7 @@ nav {
       flex-direction: column;
       margin: 0;
       padding: 15px;
-      background: #fff;
+      background: #F8FBFE;
       box-shadow: 5px 8px 12px #eee;
       z-index: -99;
       border-top: 1px solid #42b983;
@@ -157,7 +157,7 @@ nav {
       position: fixed;
       width: 100vw;
       justify-content: space-around;
-      background-color: #fff;
+      background-color: #F8FBFE;
       padding: 20px 20px;
       bottom: 0;
       box-shadow: -2px -1px 7px #eee;
