@@ -1,85 +1,94 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+const routes = [
+  {
+    path: '/',
+    component: () => import('../components/MainNavbar.vue'),
+    meta: {
+      title: 'Roboschool- Online kurslar',
+      metaTags: [
+        {
+          name: 'author',
+          content: 'Solijonov Safarbek'
+        },
+        {
+          property: 'description',
+          content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+        },
+        {
+          property: 'og:image',
+          content: "/logo.png"
+        }
+      ]
+    },
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: () => import('@/views/main/HomeView.vue')
+      },
+      {
+        path: 'about',
+        name: 'about',
+        component: () => import('../views/main/AboutView.vue')
+      }
+
+    ]
+  },
+  {
+    
+    path: '/learn',
+    component: () => import('../components/DashNavbar.vue'),
+    name: 'learn',
+    meta: {
+      title: 'Roboschool- Online kurslar',
+      metaTags: [
+        {
+          name: 'author',
+          content: 'Solijonov Safarbek'
+        },
+        {
+          property: 'description',
+          content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+        },
+        {
+          property: 'og:image',
+          content: "/logo.png"
+        }
+      ]
+    },
+    children: [
+      {
+        path:'',
+        name: 'intro',
+        component: () => import('../views/dashboard/intro-page.vue')
+      },
+      {
+        path: ':slug',
+        name: 'docs',
+        component: () => import('../views/dashboard/doc-page.vue'),
+      }
+    ]
+  },
+  {path:'/:pathMatches(.*)*', component: () => import('../components/404-componet.vue')}
+]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  // base: 'Roboschool',
-
-  routes: [
-    {
-      path: '',
-      component: () => import('../components/MainNavbar.vue'),
-      meta: {
-        title: 'Roboschool- Online kurslar',
-        metaTags: [
-          {
-            name: 'author',
-            content: 'Solijonov Safarbek'
-          },
-          {
-            property: 'description',
-            content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
-          },
-          {
-            property: 'og:image',
-            content: "/logo.png"
-          }
-        ]
-      },
-      children: [
-        {
-          path: '',
-          name: 'home',
-          component: () => import('../views/main/HomeView.vue')
-        },
-        {
-          path: 'about',
-          name: 'about',
-          component: () => import('../views/main/AboutView.vue')
-        }
-
-      ]
-    },
-    {
-      path: '/learn',
-      component: () => import('../components/DashNavbar.vue'),
-      name: 'learn',
-      meta: {
-        title: 'Roboschool- Online kurslar',
-        metaTags: [
-          {
-            name: 'author',
-            content: 'Solijonov Safarbek'
-          },
-          {
-            property: 'description',
-            content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
-          },
-          {
-            property: 'og:image',
-            content: "/logo.png"
-          }
-        ]
-      },
-      children: [
-        {
-          path:'',
-          name: 'intro',
-          component: () => import('../views/dashboard/intro.vue')
-        },
-        {
-          path: ':slug',
-          name: 'docs',
-          component: () => import('../views/dashboard/doc.vue'),
-        }
-      ]
-    },
-    {path:'/:pathMatches(.*)*', component: () => import('../components/404.vue')}
-  ],
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
   linkActiveClass: "active", // active class for non-exact links.
-  linkExactActiveClass: "active" // active class for *exact* links.
+  linkExactActiveClass: "active", // active class for *exact* links.,
+  scrollBehavior(to) {
+    if (to.hash) {
+      console.log(to)
+      return {
+        el: to.hash,
+        behavior: "smooth",
+        top: 50
+      }
+    }
+  }
 })
-
 
 
 router.beforeEach((to, from, next) => {
@@ -114,8 +123,6 @@ router.beforeEach((to, from, next) => {
 
   next();
 });
-
-
 
 
 export default router

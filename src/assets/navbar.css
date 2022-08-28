@@ -63,8 +63,12 @@ nav {
   }
   
   .menu-bar i {
+    color: #050505;
     font-size: x-large;
-    margin: 0px 5px;
+    margin: 0px 6px;
+  }
+  nav .menu-bar svg{
+    margin-top: 5px;
   }
   .menu-bar i:hover {
     cursor: pointer;

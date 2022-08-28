@@ -1573,6 +1573,6 @@ a:hover{
     background: #42d392;
 }
 .overflow-auto{
-    overflow: auto;
+    overflow-y: scroll;
 }
 
