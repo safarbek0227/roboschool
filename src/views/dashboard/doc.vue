@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     currentRouteName() {
-      return this.$route.params.name;
+      return this.$route.params.slug;
     },
   },
 };

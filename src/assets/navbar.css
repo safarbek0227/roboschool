@@ -53,7 +53,7 @@ nav {
     color: unset;
   }
   
-  nav a.router-link-exact-active {
+  nav a.active {
     color: #42b983;
   }
   
@@ -73,7 +73,7 @@ nav {
     display: none;
   }
   
-  nav .menu-bar a.router-link-exact-active {
+  nav .menu-bar a.active {
     color: unset;
   }
   
@@ -167,7 +167,7 @@ nav {
       font-size: xx-large;
     }
   
-    nav .menu-bar a.router-link-exact-active {
+    nav .menu-bar a.active {
       color: #42b983;
       background-color: #eee;
       padding: 10px;

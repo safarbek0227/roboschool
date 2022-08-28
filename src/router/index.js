@@ -43,6 +43,7 @@ const router = createRouter({
     {
       path: '/learn',
       component: () => import('../components/DashNavbar.vue'),
+      name: 'learn',
       meta: {
         title: 'Roboschool- Online kurslar',
         metaTags: [
@@ -67,15 +68,18 @@ const router = createRouter({
           component: () => import('../views/dashboard/intro.vue')
         },
         {
-          path: ':name',
+          path: ':slug',
           name: 'docs',
-          component: () => import('../views/dashboard/doc.vue')
+          component: () => import('../views/dashboard/doc.vue'),
         }
       ]
     },
     {path:'/:pathMatches(.*)*', component: () => import('../components/404.vue')}
-  ]
+  ],
+  linkActiveClass: "active", // active class for non-exact links.
+  linkExactActiveClass: "active" // active class for *exact* links.
 })
+
 
 
 router.beforeEach((to, from, next) => {

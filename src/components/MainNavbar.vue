@@ -34,8 +34,10 @@
       ></i>
     </div>
   </nav>
-
-  <router-view v-slot="{ Component }" @click="this.navbar = true">
+ <vue-topprogress ref="topProgress" :color="'#1d1d25'"
+                     :height="5" :errorColor="'#f81732'"/>
+  <router-view v-slot="{ Component }" @click="this.navbar = true"  :active.sync="isLoading"
+        :is-full-page="true" :opacity="1">
     <transition name="scale" mode="out-in">
       <component :is="Component" />
     </transition>
@@ -55,6 +57,13 @@ export default {
       this.navbar = true;
     },
   },
+     mounted() {
+      document.onreadystatechange = () => {
+        if (document.readyState === 'complete') {
+          this.isLoading = false;
+        }
+      };
+   }
 }
 </script>
 

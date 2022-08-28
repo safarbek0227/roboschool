@@ -28,8 +28,8 @@ export default {
   .section{
     padding: 25px;
   }
-  .section .row{
-    margin-left: 45px;
+  img{
+    max-width: 100%;
   }
   .section .card{
     display: flex;
@@ -42,7 +42,6 @@ export default {
   .sticky{
     position: sticky;
     top: 100px;
-    background: dodgerblue;
 }
 .w-100{
   width: 100%;

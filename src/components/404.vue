@@ -37,7 +37,7 @@
 
     <transition name="scale" mode="out-in">
       <div class="page">
-        <img src="/images/404.png" alt="" style="width: clamp(200px, 75%, 700px  );">
+        <img src="/images/404.png" alt="" style="max-width: 100%; max-height: 80%">
         <h2><a @click="$router.go(-1)" class="h3 unstyle text-gradient link">Orqaga qaytish <i class="fa-light fa-arrow-right-long"></i></a></h2>
         
       </div>
@@ -65,7 +65,7 @@ export default {
   @import url('@/assets/navbar.css');
   .page{
     display: flex;
-    padding: 50px;
+    padding: 70px;
     height: 100vh;
     flex-direction: column;
     justify-content: center;
