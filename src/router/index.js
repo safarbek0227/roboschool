@@ -74,20 +74,19 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
   linkActiveClass: "active", // active class for non-exact links.
   linkExactActiveClass: "active", // active class for *exact* links.,
   scrollBehavior(to) {
     if (to.hash) {
-      console.log(to)
       return {
         el: to.hash,
-        behavior: "smooth",
-        top: 50
+        top: 90
       }
     }
   }
+
 })
 
 

@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-xl-8">
           <div class="card">
-            <div class="step-content" ref="div1" id="intro">
+            <div class="step-content header-anchor" ref="div1" id="intro">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -15,7 +15,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content" id="div2">
+            <div class="step-content header-anchor" id="div2">
               <h1>Arduino Nima</h1>
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,17 +36,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content" id="div3">
-              <h1>Arduino Nima</h1>
-              <img src="@/assets/arduino.png" alt="" />
-              <h4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Architecto tenetur sit et quod iusto est quia recusandae at
-                repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
-                consectetur modi voluptas, officiis ullam.
-              </h4>
-            </div>
-            <div class="step-content" id="div4">
+            <div class="step-content header-anchor" id="div3">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -56,7 +46,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content" ref="div5">
+            <div class="step-content header-anchor" id="div4">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -66,7 +56,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content" ref="div6">
+            <div class="step-content header-anchor" id="div5">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -76,7 +66,17 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content" ref="div7">
+            <div class="step-content header-anchor" id="div6">
+              <h1>Arduino Nima</h1>
+              <img src="@/assets/arduino.png" alt="" />
+              <h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Architecto tenetur sit et quod iusto est quia recusandae at
+                repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
+                consectetur modi voluptas, officiis ullam.
+              </h4>
+            </div>
+            <div class="step-content header-anchor" id="div7">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -92,13 +92,10 @@
           <div class="sticky">
             <ul>
               <li>
-                <router-link  to='#intro'>div1</router-link>
+                <router-link to="#intro">intro</router-link>
               </li>
               <li>
-                <router-link  to='#div2'>div1</router-link>
-              </li>
-              <li>
-                <router-link  to='#div3'>div1</router-link>
+                <router-link to="#div7">div7</router-link>
               </li>
             </ul>
           </div>
@@ -110,13 +107,37 @@
 
 <script>
 export default {
-  methods: {
-
+  data() {
+    return {
+    };
+  },
+  mounted() {
+    // const el = document.querySelector(this.$route.hash)
+    // el && el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest",})
+    window.onload = () => {
+      window.onscroll = () => {
+        let anchors = document.querySelectorAll(".step-content");
+        for(let i = 0; i < anchors.length; i++){
+        if (
+          window.pageYOffset >= anchors[i].offsetTop &&
+          window.pageYOffset <=
+            anchors[i].offsetTop + anchors[i].scrollHeight
+        ) {
+          history.pushState({}, "", "#" + anchors[i].id);
+          console.log("#" + anchors[i].id);
+          console.log(i);
+        }
+      }
+      };
+    };
   },
 };
 </script>
 
 <style>
+a.linkActiveClass {
+  color: black;
+}
 .section {
   padding: 25px;
 }
@@ -124,7 +145,7 @@ export default {
   padding: 20px;
   border-right: 1px solid #05050520;
 }
-.card .step-content {
+.card .step-content .header-anchor {
   padding: 25px;
 }
 
