@@ -1,3 +1,40 @@
+<script>
+import debounce from 'lodash.debounce'
+
+export default {
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+
+  methods: {
+    onScroll: debounce(function () {
+      this.setActiveHash()
+    }),
+
+    setActiveHash () {
+        let sidebarLinks = [].slice.call(document.querySelectorAll('.sidebar-links'))
+        let anchors =  [].slice.call(document.querySelectorAll(".step-content"))
+          .filter(anchor => sidebarLinks.some(sidebarLink => sidebarLink.hash === '#'+anchor.id))
+        for(let i = 0; i < anchors.length; i++){
+        if (
+          window.pageYOffset >= anchors[i].offsetTop &&
+          window.pageYOffset <=
+            anchors[i].offsetTop + anchors[i].scrollHeight
+        ) {
+          sidebarLinks.forEach(link => {link.classList.remove('h');});
+          sidebarLinks[i].classList.add('h')
+          history.pushState({}, "", "#" + anchors[i].id);
+        }
+      }
+    } 
+  },
+
+  beforeUnmount () {
+    window.removeEventListener('scroll', this.onScroll)
+  }
+}
+</script>
+
 <template>
   <div class="page-data">
     <div class="section">
@@ -5,7 +42,7 @@
       <div class="row">
         <div class="col-xl-8">
           <div class="card">
-            <div class="step-content header-anchor" ref="div1" id="intro">
+            <div class="step-content" ref="div1" id="intro">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -15,7 +52,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content header-anchor" id="div2">
+            <div class="step-content" id="div2">
               <h1>Arduino Nima</h1>
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,17 +73,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content header-anchor" id="div3">
-              <h1>Arduino Nima</h1>
-              <img src="@/assets/arduino.png" alt="" />
-              <h4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Architecto tenetur sit et quod iusto est quia recusandae at
-                repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
-                consectetur modi voluptas, officiis ullam.
-              </h4>
-            </div>
-            <div class="step-content header-anchor" id="div4">
+            <div class="step-content" id="div3">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -56,7 +83,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content header-anchor" id="div5">
+            <div class="step-content" id="div4">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -66,7 +93,7 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content header-anchor" id="div6">
+            <div class="step-content" id="div5">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -76,7 +103,17 @@
                 consectetur modi voluptas, officiis ullam.
               </h4>
             </div>
-            <div class="step-content header-anchor" id="div7">
+            <div class="step-content" id="div6">
+              <h1>Arduino Nima</h1>
+              <img src="@/assets/arduino.png" alt="" />
+              <h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Architecto tenetur sit et quod iusto est quia recusandae at
+                repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
+                consectetur modi voluptas, officiis ullam.
+              </h4>
+            </div>
+            <div class="step-content" id="div7">
               <h1>Arduino Nima</h1>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
@@ -89,50 +126,34 @@
           </div>
         </div>
         <div class="col-xl-4">
-          <div class="sticky">
-            <ul>
+            <ul  class="sticky">
               <li>
-                <router-link to="#intro">intro</router-link>
+                <router-link to="#intro" class="sidebar-links">Div1</router-link>
               </li>
               <li>
-                <router-link to="#div7">div7</router-link>
+                <router-link to="#div2" class="sidebar-links">Div1</router-link>
+              </li>
+              <li>
+                <router-link to="#div3" class="sidebar-links">Div1</router-link>
+              </li>
+              <li>
+                <router-link to="#div4" class="sidebar-links">Div1</router-link>
+              </li>
+              <li>
+                <router-link to="#div5" class="sidebar-links">Div1</router-link>
+              </li>
+              <li>
+                <router-link to="#div6" class="sidebar-links">Div1</router-link>
+              </li>
+              <li>
+                <router-link to="#div7" class="sidebar-links">Div1</router-link>
               </li>
             </ul>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-    };
-  },
-  mounted() {
-    // const el = document.querySelector(this.$route.hash)
-    // el && el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest",})
-    window.onload = () => {
-      window.onscroll = () => {
-        let anchors = document.querySelectorAll(".step-content");
-        for(let i = 0; i < anchors.length; i++){
-        if (
-          window.pageYOffset >= anchors[i].offsetTop &&
-          window.pageYOffset <=
-            anchors[i].offsetTop + anchors[i].scrollHeight
-        ) {
-          history.pushState({}, "", "#" + anchors[i].id);
-          console.log("#" + anchors[i].id);
-          console.log(i);
-        }
-      }
-      };
-    };
-  },
-};
-</script>
 
 <style>
 a.linkActiveClass {
@@ -151,6 +172,7 @@ a.linkActiveClass {
 
 .sticky {
   position: sticky;
+  list-style: none;
   top: 100px;
 }
 .w-100 {
@@ -164,5 +186,17 @@ img {
   .sticky {
     position: relative;
   }
+}
+.sticky li{
+  font-size: larger;
+  list-style: none;
+}
+.sidebar-links{
+  transition: 0;
+}
+.sidebar-links.h{
+  transition: 0.5s;
+  margin-left: 10px;
+  color: black;
 }
 </style>
