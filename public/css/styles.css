@@ -6,6 +6,7 @@
     outline: none;
     box-sizing: border-box;
     transition: all 0.5s ease-in;
+    letter-spacing: 1px;
 }
 /* ::-webkit-scrollbar {
     display: none;

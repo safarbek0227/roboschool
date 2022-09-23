@@ -111,20 +111,27 @@ nav {
     margin-top: 25px;
   }
   .sidebar ul span{
-    color: #213547;
+    color: #213547f1;
     line-height: 20px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
   }
   .sidebar ul li{
     margin-top: 10px;
   }
   .sidebar ul a{
-    margin-left: 20px;
+    margin-left: 10px;
+    font-size: 18;
     color: #3c3c3c;
   }
-  .sidebar ul a.active{
-    color: #42b983;
+  .sidebar ul a.active::before {
+    content: "";
+    position: absolute;
+    margin-left: -10px;
+    width: 4px;
+    height: 20px;
+    border-radius: 5px;
+    background: #42b983;
   }
   .page-data{
     /* background-color: #F2F4F5; */
