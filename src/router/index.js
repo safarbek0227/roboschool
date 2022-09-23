@@ -77,19 +77,17 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   linkActiveClass: "active", // active class for non-exact links.
-  linkExactActiveClass: "active", // active class for *exact* links.,
+  linkExactActiveClass: "active", // active class for *exact* links.
+
   scrollBehavior(to) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        // behavior: "smooth",
-        top: 90
-      }
-    }
-  }
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({el: to.hash, top: 100, behavior: "smooth", })
+      }, 500)
+    })
+  },
 
 })
-
 
 router.beforeEach((to, from, next) => {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);

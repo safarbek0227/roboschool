@@ -1,38 +1,49 @@
 <script>
-import debounce from 'lodash.debounce'
+import debounce from "lodash.debounce";
 
 export default {
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+    this.onScroll()
   },
 
   methods: {
     onScroll: debounce(function () {
-      this.setActiveHash()
+      this.setActiveHash();
     }),
 
-    setActiveHash () {
-        let sidebarLinks = [].slice.call(document.querySelectorAll('.sidebar-links'))
-        let anchors =  [].slice.call(document.querySelectorAll(".step-content"))
-          .filter(anchor => sidebarLinks.some(sidebarLink => sidebarLink.hash === '#'+anchor.id))
-        for(let i = 0; i < anchors.length; i++){
+    setActiveHash() {
+      let sidebarLinks = [].slice.call(
+        document.querySelectorAll(".sidebar-links")
+      );
+      let anchors = [].slice
+        .call(document.querySelectorAll(".step-content"))
+        .filter((anchor) =>
+          sidebarLinks.some(
+            (sidebarLink) => sidebarLink.hash === "#" + anchor.id
+          )
+        );
+
+      for (let i = 0; i < anchors.length; i++) {
         if (
           window.pageYOffset >= anchors[i].offsetTop &&
           window.pageYOffset <=
-            anchors[i].offsetTop + anchors[i].scrollHeight
+            anchors[i].offsetTop + anchors[i].scrollHeight + 10
         ) {
-          sidebarLinks.forEach(link => {link.classList.remove('h');});
-          sidebarLinks[i].classList.add('h')
+          sidebarLinks.forEach((link) => {
+            link.classList.remove("hash-active");
+          });
+          sidebarLinks[i].classList.add("hash-active");
           history.pushState({}, "", "#" + anchors[i].id);
         }
       }
-    } 
+    },
   },
 
-  beforeUnmount () {
-    window.removeEventListener('scroll', this.onScroll)
-  }
-}
+  // beforeUnmount () {
+  //   window.removeEventListener('scroll', this.onScroll)
+  // }
+};
 </script>
 
 <template>
@@ -43,7 +54,7 @@ export default {
         <div class="col-xl-8">
           <div class="card">
             <div class="step-content" ref="div1" id="intro">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -53,7 +64,7 @@ export default {
               </h4>
             </div>
             <div class="step-content" id="div2">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
@@ -74,7 +85,7 @@ export default {
               </h4>
             </div>
             <div class="step-content" id="div3">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -84,7 +95,7 @@ export default {
               </h4>
             </div>
             <div class="step-content" id="div4">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -94,7 +105,7 @@ export default {
               </h4>
             </div>
             <div class="step-content" id="div5">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -104,7 +115,7 @@ export default {
               </h4>
             </div>
             <div class="step-content" id="div6">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -114,7 +125,7 @@ export default {
               </h4>
             </div>
             <div class="step-content" id="div7">
-              <h1>Arduino Nima</h1>
+              <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
               <h4>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -126,29 +137,43 @@ export default {
           </div>
         </div>
         <div class="col-xl-4">
-            <ul  class="sticky">
+          <div class="sticky">
+            <span class="text-gradient h3">Bo'limlar</span>
+            <ul>
               <li>
-                <router-link to="#intro" class="sidebar-links">Div1</router-link>
+                <router-link to="#intro" class="sidebar-links"
+                  >Intro</router-link
+                >
               </li>
               <li>
-                <router-link to="#div2" class="sidebar-links">Div1</router-link>
+                <router-link to="#div2" class="sidebar-links"
+                  >start</router-link
+                >
               </li>
               <li>
-                <router-link to="#div3" class="sidebar-links">Div1</router-link>
+                <router-link to="#div3" class="sidebar-links"
+                  >build</router-link
+                >
               </li>
               <li>
-                <router-link to="#div4" class="sidebar-links">Div1</router-link>
+                <router-link to="#div4" class="sidebar-links">code</router-link>
               </li>
               <li>
-                <router-link to="#div5" class="sidebar-links">Div1</router-link>
+                <router-link to="#div5" class="sidebar-links"
+                  >result</router-link
+                >
               </li>
               <li>
-                <router-link to="#div6" class="sidebar-links">Div1</router-link>
+                <router-link to="#div6" class="sidebar-links">buy</router-link>
               </li>
               <li>
-                <router-link to="#div7" class="sidebar-links">Div1</router-link>
+                <router-link to="#div7" class="sidebar-links"
+                  >contact</router-link
+                >
               </li>
             </ul>
+            <div class="associate-section"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -179,24 +204,41 @@ a.linkActiveClass {
   width: 100%;
 }
 img {
-  max-width: 100%;
-  max-height: 600px;
+  width: clamp(130px, 80%, 600px);
 }
 @media (max-width: 992px) {
   .sticky {
     position: relative;
   }
 }
-.sticky li{
-  font-size: larger;
-  list-style: none;
+
+.sticky ul {
+  margin-left: -30px;
 }
-.sidebar-links{
+.sticky ul li {
+  font-size: 20px;
+  list-style: none;
+  margin: 10px;
+  text-transform: capitalize;
+}
+.sidebar-links {
+  color: #21354770;
   transition: 0;
 }
-.sidebar-links.h{
-  transition: 0.5s;
-  margin-left: 10px;
-  color: black;
+.sidebar-links.hash-active {
+  transition: all 0.5s;
+  color: #213547;
+}
+.sidebar-links.hash-active::before {
+  content: "";
+  position: absolute;
+  margin-left: -10px;
+  width: 4px;
+  height: 20px;
+  border-radius: 5px;
+  background: #42b983;
+}
+.associate-section {
+  display: flex;
 }
 </style>
