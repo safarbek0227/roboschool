@@ -5,14 +5,23 @@
     font-style: normal;
     outline: none;
     box-sizing: border-box;
-    transition: all 0.5s ease-in;
+    transition: all 0.3s ease-in;
     letter-spacing: 1px;
 }
-/* ::-webkit-scrollbar {
-    display: none;
-} */
-
-
+:root{
+    --theme: #F2F4F5;
+    --color: #2c3e50;
+    --nav-color: #F8FBFE;
+}
+html{
+    transition: color 0s;
+}
+html.dark{
+    transition: color 0s;
+    --theme: #1a1a1a;
+    --color: #ebebeb80 ;
+    --nav-color: #0E0D11;
+}
 h1,h2,h3,h4,h5,h6{
     font-weight: 500;
 }
@@ -29,7 +38,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: "Kaushan Script", cursive !important;
-    background: #F2F4F5;
+    background: var(--theme);
+    color: var(--color)
 }
 .page{
     padding: 90px 5px;
@@ -47,5 +57,4 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
 }

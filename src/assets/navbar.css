@@ -7,7 +7,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #42b983;
-    background: #F8FBFE;
+    background: var(--theme);
+    color: var(--color);
     padding: 5px 100px 5px 100px;
     z-index: 900;
   }
@@ -44,7 +45,7 @@ nav {
   
   nav a {
     text-decoration: none;
-    color: #323658;
+    color: var(--color);
   }
   
   nav a:hover {
@@ -62,11 +63,12 @@ nav {
   }
   
   .menu-bar i {
-    color: #050505;
+    color: var(--color);
     font-size: x-large;
     margin: 0px 6px;
   }
   nav .menu-bar svg{
+    fill: var(--color);
     margin-top: 5px;
   }
   .menu-bar i:hover {

@@ -8,7 +8,7 @@ nav {
     justify-content: space-between;
     border-bottom: 1px solid #42b983;
     border-bottom-right-radius: 45px;
-    background: #F8FBFE;
+    background: var(--theme); 
     padding: 5px 100px 5px 25px;
     z-index: 90;
   }
@@ -35,7 +35,7 @@ nav {
   
   nav a {
     text-decoration: none;
-    color: #323658;
+    color: var(--color)
   }
   
   nav a:hover {
@@ -53,11 +53,12 @@ nav {
   }
   
   .menu-bar i {
-    color: #050505;
+    color: var(--color);
     font-size: x-large;
     margin: 0px 6px;
   }
   nav .menu-bar svg{
+    fill: var(--color);
     margin-top: 5px;
   }
   .menu-bar i:hover {
@@ -82,10 +83,9 @@ nav {
     width: 280px;
     height: 100vh;
     text-align: left;
-    background: #F8FBFE;
+    background: var(--nav-color);
     padding: 90px 10px 45px 10px;
     border-bottom-right-radius: 35px;
-    box-shadow: -6px 11px 11px 0px #eee;  
     flex-direction: column;
     z-index: 5;
   }
@@ -109,29 +109,25 @@ nav {
     list-style: none;
     padding-inline-start: 10px;
     margin-top: 25px;
+    margin-left: 10px;
   }
   .sidebar ul span{
-    color: #213547f1;
+    color: var(--color);
     line-height: 20px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
   }
   .sidebar ul li{
     margin-top: 10px;
   }
   .sidebar ul a{
-    margin-left: 10px;
     font-size: 18;
-    color: #3c3c3c;
+    color: var(--color);
+    padding-left: 5px;
+    transition: border 0s;
   }
-  .sidebar ul a.active::before {
-    content: "";
-    position: absolute;
-    margin-left: -10px;
-    width: 4px;
-    height: 20px;
-    border-radius: 5px;
-    background: #42b983;
+  .sidebar ul a.active{
+    border-left: 4px solid #42b983;
   }
   .page-data{
     /* background-color: #F2F4F5; */
@@ -199,7 +195,6 @@ nav {
       width: 100vw;
       height: 60px;
       justify-content: space-around;
-      background-color: #fff;
       padding: 20px 20px;
       bottom: 0;
       box-shadow: -2px -1px 7px #eee;
@@ -209,7 +204,6 @@ nav {
     }
     nav .menu-bar a.active {
       color: #42b983;
-      background-color: #eee;
       padding: 10px;
       border-radius: 15px;
       transition: all 0.2s;

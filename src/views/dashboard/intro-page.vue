@@ -222,7 +222,7 @@ img {
   text-transform: capitalize;
 }
 .sidebar-links {
-  color: #21354770;
+  color: var(--color) + 70;
   transition: 0;
 }
 .sidebar-links.hash-active {

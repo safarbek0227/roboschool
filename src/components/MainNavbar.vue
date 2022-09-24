@@ -11,9 +11,10 @@
       <li><router-link to="/learn">Learn</router-link></li>
       <li><router-link to="/about">Shop</router-link></li>
       <li><router-link to="/about">New</router-link></li>
-      <li><router-link to="/about">Contact</router-link></li>
+      <li><router-link to="/about">{{this.color ? 'light': 'dark'}}</router-link></li>
     </ul>
     <div class="menu-bar">
+      <i class="fa-duotone"  :class="[color ? 'fa-sun' : 'fa-moon']" @click="toggleTheme" ></i>
       <router-link to="/profile">
         <i class="fa-regular fa-user"></i>
       </router-link>
@@ -44,10 +45,8 @@
           />
         </svg>
       </a>
-
-      <i
-        class="fa-regular rb-md-block"
-        :class="[navbar ? 'fa-bars' : 'fa-x', 'fa-bars']"
+      <i class="fa-regular rb-md-block"
+        :class="[navbar ? 'fa-bars' : 'fa-x']"
         @click="this.navbar = !this.navbar"
       ></i>
     </div>
@@ -65,12 +64,19 @@ export default {
   data() {
     return {
       navbar: true,
+      color: true,
     };
   },
   watch: {
     $route() {
       this.navbar = true;
     },
+  },
+  methods: {
+    toggleTheme(){
+      this.color = !this.color
+      document.documentElement.className  = this.color ? 'light': 'dark'
+    }
   },
   mounted() {
     document.onreadystatechange = () => {

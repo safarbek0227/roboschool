@@ -21,6 +21,25 @@
         </div>
         <span>the best way</span>
     </div>
+    <div class="container text-left mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <h6>Lorem, ipsum dolor.</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste tenetur cum quaerat doloremque ex odio aliquid pariatur reprehenderit magnam. Iste inventore vero debitis itaque?
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h6>Lorem, ipsum dolor.</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste tenetur cum quaerat doloremque ex odio aliquid pariatur reprehenderit magnam. Iste inventore vero debitis itaque?
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h6>Lorem, ipsum dolor.</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste tenetur cum quaerat doloremque ex odio aliquid pariatur reprehenderit magnam. Iste inventore vero debitis itaque?
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </transition>
 
@@ -63,6 +82,15 @@ export default {
   display: flex;
   align-items: center;
 }
+.text-left{
+  text-align: left;
+}
+.text-left p{
+  font-size: large;
+}
+.text-left h6{
+  font-weight: 550;
+}
 @media (max-width: 768px){
   img{
       width: clamp(130px, 80%, 250px);
@@ -74,6 +102,9 @@ export default {
   }
   .special-sponsor span{
     font-size: large;
+  }
+  .text-left p{
+    font-size: medium;
   }
 }
 </style>

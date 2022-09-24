@@ -6,6 +6,11 @@
       <span class="text-gradient">RoboSchool</span>
     </a>
     <div class="menu-bar">
+      <i
+        class="fa-duotone"
+        :class="[color ? 'fa-sun' : 'fa-moon']"
+        @click="toggleTheme"
+      ></i>
       <router-link to="/profile">
         <i class="fa-regular fa-user"></i>
       </router-link>
@@ -58,162 +63,26 @@
             >
           </li>
           <li>
+            <router-link :to="{ name: 'docs', params: { slug: 'fours' } }">Introduction</router-link>
+          </li>
+          <li>
             <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
               >Quick start</router-link
             >
           </li>
           <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
+            <router-link :to="{ name: 'docs', params: { slug: 'fours' } }">Introduction</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
+            <router-link :to="{ name: 'docs', params: { slug: 'third' } }"
               >Quick start</router-link
             >
           </li>
           <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
+            <router-link :to="{ name: 'docs', params: { slug: 'fours' } }">Introduction</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
-              >Quick start</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'about' } }"
-              >intro</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li><span>Getting start</span></li>
-          <li>
-            <router-link :to="{ name: 'intro' }">Introduction</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'docs', params: { slug: 'home' } }"
+            <router-link :to="{ name: 'docs', params: { slug: 'fours' } }"
               >Quick start</router-link
             >
           </li>
@@ -244,7 +113,7 @@
         <a href="#"><i class="fa-brands fa-telegram"></i></a>
         <a href="#"><i class="fa-solid fa-envelope"></i></a>
         <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>        
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
       </div>
     </div>
     <router-view v-slot="{ Component }" @click="this.navbar = true">
@@ -262,12 +131,18 @@ export default {
   data() {
     return {
       navbar: true,
-      isLoading: true,
+      color: true,
     };
   },
   watch: {
     $route() {
       this.navbar = true;
+    },
+  },
+  methods: {
+    toggleTheme() {
+      this.color = !this.color;
+      document.documentElement.className = this.color ? "light" : "dark";
     },
   },
 };
