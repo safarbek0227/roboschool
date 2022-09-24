@@ -138,8 +138,8 @@ nav {
       flex-direction: column;
       margin: 0;
       padding: 15px;
-      background: #F8FBFE;
-      box-shadow: 5px 8px 12px #eee;
+      background: var(--theme); 
+      box-shadow: 5px 8px 12px  var(--shadow);
       z-index: -99;
       border-top: 1px solid #42b983;
       top: 90px;
@@ -163,10 +163,10 @@ nav {
       width: 100vw;
       height: 60px;
       justify-content: space-around;
-      background-color: #F8FBFE;
+      background: var(--theme); 
       padding: 20px 20px;
       bottom: 0;
-      box-shadow: -2px -1px 7px #eee;
+      box-shadow: -2px -1px 7px var(--shadow);
     }
     .menu-bar i{
       font-size: xx-large;
@@ -174,7 +174,7 @@ nav {
   
     nav .menu-bar a.active {
       color: #42b983;
-      background-color: #eee;
+      background-color:  var(--shadow);
       padding: 10px;
       border-radius: 15px;
       transition: all 0.2s;

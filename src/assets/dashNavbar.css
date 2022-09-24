@@ -195,6 +195,7 @@ nav {
       width: 100vw;
       height: 60px;
       justify-content: space-around;
+      background-color: var(--nav-color);
       padding: 20px 20px;
       bottom: 0;
       box-shadow: -2px -1px 7px #eee;

@@ -26,9 +26,9 @@ export default {
 
       for (let i = 0; i < anchors.length; i++) {
         if (
-          window.pageYOffset >= anchors[i].offsetTop &&
+          window.pageYOffset >= anchors[i].offsetTop  &&
           window.pageYOffset <=
-            anchors[i].offsetTop + anchors[i].scrollHeight + 10
+            anchors[i].offsetTop + anchors[i].scrollHeight
         ) {
           sidebarLinks.forEach((link) => {
             link.classList.remove("hash-active");
@@ -56,89 +56,90 @@ export default {
             <div class="step-content" ref="div1" id="intro">
               <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
             <div class="step-content" id="div2">
               <h2>Arduino Nima</h2>
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
-              <h4>
+              </h5>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
-              <h4>
+              </h5>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
             <div class="step-content" id="div3">
               <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
             <div class="step-content" id="div4">
               <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
             <div class="step-content" id="div5">
               <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
             <div class="step-content" id="div6">
               <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
             <div class="step-content" id="div7">
               <h2>Arduino Nima</h2>
               <img src="@/assets/arduino.png" alt="" />
-              <h4>
+              <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Architecto tenetur sit et quod iusto est quia recusandae at
                 repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
                 consectetur modi voluptas, officiis ullam.
-              </h4>
+              </h5>
             </div>
+            <br><br><br><br><br>
           </div>
         </div>
         <div class="col-xl-4">
           <div class="sticky">
-            <span class="text-gradient h3">Bo'limlar</span>
+            <span class="text-gradient h3">Bu sahifada</span>
             <ul>
               <li>
                 <router-link to="#intro" class="sidebar-links"
@@ -185,13 +186,13 @@ a.linkActiveClass {
   color: black;
 }
 .section {
-  padding: 25px;
+  padding: 25px 0;
 }
 .section .card {
   padding: 20px;
   border-right: 1px solid #05050520;
 }
-.card .step-content .header-anchor {
+.card .step-content {
   padding: 25px;
 }
 
@@ -210,6 +211,10 @@ img {
   .sticky {
     position: relative;
   }
+}@media (max-width: 576px){
+  .section .card {
+    padding: 5px;
+  }
 }
 
 .sticky ul {
@@ -222,12 +227,10 @@ img {
   text-transform: capitalize;
 }
 .sidebar-links {
-  color: var(--color) + 70;
-  transition: 0;
+  color: var(--color);
 }
 .sidebar-links.hash-active {
-  transition: all 0.5s;
-  color: #213547;
+  font-weight: 600;
 }
 .sidebar-links.hash-active::before {
   content: "";

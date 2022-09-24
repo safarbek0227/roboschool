@@ -6,21 +6,24 @@
     outline: none;
     box-sizing: border-box;
     transition: all 0.3s ease-in;
+    transition: color 0.05s;
     letter-spacing: 1px;
 }
 :root{
     --theme: #F2F4F5;
     --color: #2c3e50;
     --nav-color: #F8FBFE;
+    --shadow: #eee
 }
 html{
-    transition: color 0s;
+    transition: all 0s;
 }
 html.dark{
-    transition: color 0s;
+    transition: all 0s;
     --theme: #1a1a1a;
     --color: #ebebeb80 ;
     --nav-color: #0E0D11;
+    --shadow: #282828
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: 500;

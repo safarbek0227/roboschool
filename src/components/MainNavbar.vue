@@ -75,15 +75,15 @@ export default {
   methods: {
     toggleTheme(){
       this.color = !this.color
+      localStorage.setItem('color', this.color)
       document.documentElement.className  = this.color ? 'light': 'dark'
     }
   },
   mounted() {
-    document.onreadystatechange = () => {
-      if (document.readyState === "complete") {
-        this.isLoading = false;
-      }
-    };
+    if (localStorage.color) {
+      this.color = JSON.parse(localStorage.color);
+      document.documentElement.className  = this.color ? 'light': 'dark'
+    }
   },
 };
 </script>
