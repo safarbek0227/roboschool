@@ -33,8 +33,8 @@ export default {
           sidebarLinks.forEach((link) => {
             link.classList.remove("hash-active");
           });
-          sidebarLinks[i].classList.add("hash-active");
           history.pushState({}, "", "#" + anchors[i].id);
+          sidebarLinks[i].classList.add("hash-active");
         }
       }
     },
