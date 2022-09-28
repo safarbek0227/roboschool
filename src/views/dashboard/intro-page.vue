@@ -139,38 +139,28 @@ export default {
         </div>
         <div class="col-xl-4">
           <div class="sticky">
-            <span class="text-gradient h3">Bu sahifada</span>
-            <ul>
+            <span class="text-gradient h3 rb-md-none">Bu sahifada</span>
+            <ul class="rb-md-none">
               <li>
-                <router-link to="#intro" class="sidebar-links"
-                  >Intro</router-link
-                >
+                <router-link to="#intro" class="sidebar-links">Intro</router-link>
               </li>
               <li>
-                <router-link to="#div2" class="sidebar-links"
-                  >start</router-link
-                >
+                <router-link to="#div2" class="sidebar-links">start</router-link>
               </li>
               <li>
-                <router-link to="#div3" class="sidebar-links"
-                  >build</router-link
-                >
+                <router-link to="#div3" class="sidebar-links">build</router-link>
               </li>
               <li>
                 <router-link to="#div4" class="sidebar-links">code</router-link>
               </li>
               <li>
-                <router-link to="#div5" class="sidebar-links"
-                  >result</router-link
-                >
+                <router-link to="#div5" class="sidebar-links">result</router-link>
               </li>
               <li>
                 <router-link to="#div6" class="sidebar-links">buy</router-link>
               </li>
               <li>
-                <router-link to="#div7" class="sidebar-links"
-                  >contact</router-link
-                >
+                <router-link to="#div7" class="sidebar-links">contact</router-link>
               </li>
             </ul>
             <div class="associate-section"></div>
@@ -206,6 +196,14 @@ a.linkActiveClass {
 }
 img {
   width: clamp(130px, 80%, 600px);
+}
+.rb-md-none {
+  display: initial;
+}
+@media (max-width: 768px) {
+  .rb-md-none {
+    display: none;
+  }  
 }
 @media (max-width: 992px) {
   .sticky {
