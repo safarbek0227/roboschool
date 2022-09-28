@@ -9,7 +9,7 @@ nav {
     border-bottom: 1px solid #42b983;
     border-bottom-right-radius: 45px;
     background: var(--theme); 
-    padding: 5px 100px 5px 25px;
+    padding: 15px 100px 15px 25px;
     z-index: 90;
   }
   
