@@ -1,3 +1,33 @@
+
+<script>
+export default {
+  data() {
+    return {
+      navbar: true,
+      color: true,
+    };
+  },
+  watch: {
+    $route() {
+      this.navbar = true;
+    },
+  },
+  methods: {
+    toggleTheme(){
+      this.color = !this.color
+      localStorage.setItem('color', this.color)
+      document.documentElement.className  = this.color ? 'light': 'dark'
+    }
+  },
+  mounted() {
+    if (localStorage.color) {
+      this.color = JSON.parse(localStorage.color);
+      document.documentElement.className  = this.color ? 'light': 'dark'
+    }
+  },
+};
+</script>
+
 <template>
   <nav>
     <a href="/" class="logo">
@@ -56,38 +86,95 @@
       <component :is="Component" />
     </transition>
   </router-view>
+  <footer>
+    <div class="container">
+      <h6>Subscribe to our weekly newsletter.</h6>
+      <div class="input-group">
+        <input type="email" class="input" id="Email" name="Email" placeholder="Email address" autocomplete="off">
+        <input class="button--submit" value="Subscribe" type="submit">
+      </div>
+      <br>
+      <p>You can read the previous issues and listen to our podcast at <a href="">RoboSchool.uz/News</a> .</p>
+      <p>You may also go social at <a href="">telegram</a>, or join our home at <a href="">instagram</a>.</p>
+    </div>
+  </footer>
 </template>
-
-
-<script>
-export default {
-  data() {
-    return {
-      navbar: true,
-      color: true,
-    };
-  },
-  watch: {
-    $route() {
-      this.navbar = true;
-    },
-  },
-  methods: {
-    toggleTheme(){
-      this.color = !this.color
-      localStorage.setItem('color', this.color)
-      document.documentElement.className  = this.color ? 'light': 'dark'
-    }
-  },
-  mounted() {
-    if (localStorage.color) {
-      this.color = JSON.parse(localStorage.color);
-      document.documentElement.className  = this.color ? 'light': 'dark'
-    }
-  },
-};
-</script>
 
 <style>
 @import url("@/assets/navbar.css");
+footer form{
+  margin-top: 25px;
+  display: flex;
+  border-radius: 8px;
+  padding: 8px 5px;
+  font-size: 16px;
+  transition:all 0.8s;
+  border: 1px solid var(--color);
+  border-radius: 5px;
+  justify-content: space-between;
+}
+footer .container{
+  margin: 0 auto;
+  max-width: 700px;
+}
+footer p{
+  margin: 5px 0;
+}
+.input-group {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.input {
+  min-height: 50px;
+  width: 75%;
+  padding: 0 1rem;
+  color: var(--color);
+  font-size: 15px;
+  border: 1px solid #42b983;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button--submit {
+  width: 25%;
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #42b983;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+@media (max-width: 576px){
+  .button--submit {
+    width: 40%;
+  }
+  .input {
+    width: 60%;
+  }
+}
+@media (max-width: 300px){
+  .button--submit {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+  .input {
+    border-radius: 6px;
+    width: 100%;
+  }
+}
+.button--submit:hover {
+  background-color: #42b983;
+}
+
+.input:focus, .input:focus-visible {
+  border-color: #42b983;
+  outline: none;
+}
+
 </style>

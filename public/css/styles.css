@@ -12,7 +12,8 @@
     --theme: #F2F4F5;
     --color: #2c3e50;
     --nav-color: #F8FBFE;
-    --shadow: #eee
+    --shadow: #eee;
+    --hight-light: #3c3c3cb3;
 }
 html{
     transition: all 0s;
@@ -22,18 +23,18 @@ html.dark{
     --theme: #1a1a1a;
     --color: #ebebeb80 ;
     --nav-color: #0E0D11;
-    --shadow: #282828
+    --shadow: #282828;
+    --hight-light: #ebebeb99;
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: 500;
 }
 a{
-    color: #647eff;
+    color: #42b983;
     font-weight: 400;
 }
 strong{
-    color: #42b983;
-    font-weight: 400;
+    font-weight: 700;
 }
 body {
     margin: 0;
@@ -44,7 +45,7 @@ body {
     color: var(--color)
 }
 .page{
-    padding: 100px 5px ;
+    padding: 100px 5px  0 ;
     justify-content: normal ;
 }
 .text-gradient {

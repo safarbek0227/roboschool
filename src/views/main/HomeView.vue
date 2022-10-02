@@ -1,61 +1,199 @@
+
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+export default {
+  data() {
+    return {
+      swiperOptions: {
+        breakpoints: {
+          0:{
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+          },
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 100,
+          },
+          1080: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      },
+    };
+  },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {};
+  },
+};
+</script>
+
+
 <template>
-
- <transition name="fade">
-  <div class="page ">
-    <div class="home container">
-      <img src="@/assets/fixing-robot.png" alt="">
-      <h1>Bizning<span class="text-gradient">RoboSchool</span>ga xush kelibsiz</h1>
-      <h3>
-        Bizning saytda <a href="">Arduino</a> va <a href="">Robtotextnikani</a> onlayn o'rganing.
-      <strong> O'zingizda kerakli</strong> buyumlarni bizning <a href="/shop"> sotuv bolimimizdan</a> sotib olishiz mumkin
-      </h3>
-      <br>
-        <router-link to="learn" class="h3 unstyle text-gradient link">Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i></router-link>
-
-    </div>
-    <div class="special-sponsor">
+  <transition name="fade">
+    <div class="page">
+      <div class="home container">
+        <img src="@/assets/fixing-robot.png" alt="" />
+        <h1>
+          Bizning<span class="text-gradient">RoboSchool</span>ga xush kelibsiz
+        </h1>
+        <h3>
+          Bizning saytda <a href="">Arduino</a> va
+          <a href="">Robtotextnikani</a> onlayn o'rganing.
+          <strong> O'zingizda kerakli</strong> buyumlarni bizning
+          <a href="/shop"> sotuv bolimimizdan</a> sotib olishiz mumkin
+        </h3>
+        <br />
+        <router-link to="learn" class="h3 unstyle text-gradient link"
+          >Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i
+        ></router-link>
+      </div>
+      <div class="special-sponsor">
         <span>Special Sponsor</span>
         <div class="logo-content">
-          <img src="@/assets/logo.png" alt="" >
+          <img src="@/assets/logo.png" alt="" />
           <span class="text-gradient">RoboSchool</span>
         </div>
         <span>the best way</span>
-    </div>
-    <div class="container text-left mt-5">
-      <div class="row">
-        <div class="col-md-4">
-          <h6>Lorem, ipsum dolor.</h6>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste tenetur cum quaerat doloremque ex odio aliquid pariatur reprehenderit magnam. Iste inventore vero debitis itaque?
-          </p>
-        </div>
-        <div class="col-md-4">
-          <h6>Lorem, ipsum dolor.</h6>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste tenetur cum quaerat doloremque ex odio aliquid pariatur reprehenderit magnam. Iste inventore vero debitis itaque?
-          </p>
-        </div>
-        <div class="col-md-4">
-          <h6>Lorem, ipsum dolor.</h6>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste tenetur cum quaerat doloremque ex odio aliquid pariatur reprehenderit magnam. Iste inventore vero debitis itaque?
-          </p>
+      </div>
+      <div class="container text-left mt-5 text-light">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>Approachable</h6>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              iste tenetur cum quaerat doloremque ex odio aliquid pariatur
+              reprehenderit magnam. Iste inventore vero debitis itaque?
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h6>Performant</h6>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              iste tenetur cum quaerat doloremque ex odio aliquid pariatur
+              reprehenderit magnam. Iste inventore vero debitis itaque?
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h6>Versatile</h6>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              iste tenetur cum quaerat doloremque ex odio aliquid pariatur
+              reprehenderit magnam. Iste inventore vero debitis itaque?
+            </p>
+          </div>
         </div>
       </div>
+      <div class="Author container">
+        <br /><br />
+        <h1>Our team</h1>
+        <br /><br />
+        <swiper
+          :watchSlidesProgress="true"
+          :slidesPerView="4"
+          :breakpoints="swiperOptions.breakpoints"
+          class="mySwiper"
+        >
+          <swiper-slide>
+            <div class="card">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <p class="text-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Corrupti repellat, consequuntur doloribus voluptate esse iure?
+                </p>
+                <p class="text-title">Autor</p>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="card">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <p class="text-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Corrupti repellat, consequuntur doloribus voluptate esse iure?
+                </p>
+                <p class="text-title">Autor</p>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="card">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <p class="text-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Corrupti repellat, consequuntur doloribus voluptate esse iure?
+                </p>
+                <p class="text-title">Autor</p>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="card">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <p class="text-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Corrupti repellat, consequuntur doloribus voluptate esse iure?
+                </p>
+                <p class="text-title">Autor</p>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="card">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <p class="text-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Corrupti repellat, consequuntur doloribus voluptate esse iure?
+                </p>
+                <p class="text-title">Autor</p>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="card">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <p class="text-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Corrupti repellat, consequuntur doloribus voluptate esse iure?
+                </p>
+                <p class="text-title">Autor</p>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
-  </div>
-</transition>
-
+  </transition>
 </template>
 
-<script>
-export default {
-}
-</script>
-
 <style>
-
-.home{
+.home {
   margin-top: 50px;
 }
-.home img{
+.home img {
   width: clamp(130px, 80%, 320px);
 }
 
@@ -68,43 +206,140 @@ export default {
   border-top: 1px solid #3c3c3c1f;
   border-bottom: 1px solid #3c3c3c1f;
 }
-.special-sponsor span{
+.special-sponsor span {
   font-size: x-large;
-  margin-right:  15px;
+  margin-right: 15px;
   margin-top: 5px;
-  color: #3c3c3cb3;
+  color: var(--hight-light);
 }
-.special-sponsor  img{
-  width: 40px ;
+.special-sponsor img {
+  width: 40px;
   height: 40px;
 }
-.logo-content{
+.logo-content {
   display: flex;
   align-items: center;
 }
-.text-left{
+.text-left {
   text-align: left;
 }
-.text-left p{
-  font-size: large;
+.text-left p {
+  color: var(--hight-light);
+  font-size: 16px;
 }
-.text-left h6{
+.text-left h6 {
   font-weight: 550;
 }
-@media (max-width: 768px){
-  img{
-      width: clamp(130px, 80%, 250px);
+
+.card {
+  width: 250px;
+  height: 300px;
+  background: var(--nav-color);
+  overflow: visible;
+  box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 0 1rem;
+}
+
+.card-img {
+  --size: 100px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #42caff;
+  background: linear-gradient(to bottom, #42caff 0%, #e81aff 100%);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-img::before {
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  border: 1rem solid #e8e8e8;
+}
+
+/*Text*/
+.text-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #42caff;
+  letter-spacing: 0.05rem;
+}
+
+.text-body {
+  font-size: 14px;
+  text-align: center;
+  color: #6f6d78;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*Hover*/
+.card:hover .card-img {
+  --size: 110px;
+  width: var(--size);
+  height: var(--size);
+}
+.Author{
+  /* margin: 20px; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  img {
+    width: clamp(130px, 80%, 250px);
   }
 }
-@media (max-width: 576px){
-  .special-sponsor{
-      flex-direction: column;
+@media (max-width: 576px) {
+  .special-sponsor {
+    flex-direction: column;
   }
-  .special-sponsor span{
+  .special-sponsor span {
     font-size: large;
   }
-  .text-left p{
+  .text-left p {
     font-size: medium;
   }
+  .card{
+    width: 200px;
+  }
 }
+@media (max-width: 300px) {
+  .home h1{
+    font-size: 16px;
+  }
+  .home h3{
+    font-size: 14px;
+  }
+}
+
+
 </style>
