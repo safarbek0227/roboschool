@@ -1,7 +1,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-
+import debounce from "lodash.debounce";
 // Import Swiper styles
 import "swiper/css";
 
@@ -42,6 +42,30 @@ export default {
   setup() {
     return {};
   },
+    mounted() {
+    window.addEventListener("scroll", this.onScroll);
+    this.onScroll();
+  },
+
+  methods: {
+    onScroll: debounce(function () {
+      this.setActiveHash();
+    }),
+
+    setActiveHash() {
+      let anchors = [].slice
+        .call(document.querySelectorAll(".page > div"))
+
+      for (let i = 0; i < anchors.length; i++) {
+        if (
+          window.pageYOffset >= anchors[i].offsetTop - 100  &&
+          window.pageYOffset <= anchors[i].offsetTop + anchors[i].scrollHeight
+        ) {
+          history.pushState({}, "", "#" + anchors[i].id);
+        }
+      }
+    },
+  },
 };
 </script>
 
@@ -49,7 +73,7 @@ export default {
 <template>
   <transition name="fade">
     <div class="page">
-      <div class="home container">
+      <div class="home container" id="introduce">
         <img src="@/assets/fixing-robot.png" alt="" />
         <h1>
           Bizning<span class="text-gradient">RoboSchool</span>ga xush kelibsiz
@@ -65,6 +89,8 @@ export default {
           >Hoziroq boshlang <i class="fa-light fa-arrow-right-long"></i
         ></router-link>
       </div>
+      <div id="information">
+        <br>
       <div class="special-sponsor">
         <span>Special Sponsor</span>
         <div class="logo-content">
@@ -101,10 +127,42 @@ export default {
           </div>
         </div>
       </div>
-      <div class="Author container">
-        <br /><br />
+      </div>
+      <div class="sponsor container" id="sponsor">
+        <br><br>
+        <h1>Our sponsor</h1>
+        <br><br>
+        <div class="row">
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/roboschool.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/Asset.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/roboschool.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/Asset.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/roboschool.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/Asset.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/roboschool.png" alt="">
+          </a>
+          <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="/images/Asset.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="Author container" id="author">
+        <br />
         <h1>Our team</h1>
-        <br /><br />
+        <br />
         <swiper
           :watchSlidesProgress="true"
           :slidesPerView="4"
@@ -113,7 +171,9 @@ export default {
         >
           <swiper-slide>
             <div class="card">
-              <div class="card-img"></div>
+              <div class="card-img">
+                <img src="@/assets/owner.jpg" alt="">
+              </div>
               <div class="card-info">
                 <p class="text-body">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -191,10 +251,13 @@ export default {
 
 <style>
 .home {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 .home img {
   width: clamp(130px, 80%, 320px);
+}
+.page > div{
+  margin-top: 80px;
 }
 
 .special-sponsor {
@@ -230,10 +293,22 @@ export default {
 .text-left h6 {
   font-weight: 550;
 }
+.sponsor{
+  text-align: left;
+}
+
+
+.sponsor img{
+  max-width: 100%;
+}
+.sponsor .row > a{
+  padding: 0 5px;
+}
+
 
 .card {
   width: 250px;
-  height: 300px;
+  height: 350px;
   background: var(--nav-color);
   overflow: visible;
   box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
@@ -259,7 +334,13 @@ export default {
   background: #42caff;
   background: linear-gradient(to bottom, #42caff 0%, #e81aff 100%);
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.card-img img{
+  width: var(--size); 
+  height: var(--size); 
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
 }
 
 .card-img::before {
@@ -271,7 +352,7 @@ export default {
   width: 90%;
   height: 90%;
   transform: translate(-50%, -50%);
-  border: 1rem solid #e8e8e8;
+  border: 1rem solid var(--theme);
 }
 
 /*Text*/
@@ -292,20 +373,18 @@ export default {
 
 /*Hover*/
 .card:hover .card-img {
-  --size: 110px;
+  --size: 150px;
   width: var(--size);
   height: var(--size);
 }
 .Author{
-  /* margin: 20px; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  display: block;
+  text-align: -webkit-center;
 }
 .swiper {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .swiper-slide {
@@ -316,6 +395,9 @@ export default {
 @media (max-width: 768px) {
   img {
     width: clamp(130px, 80%, 250px);
+  }
+  .sponsor{
+    text-align: center;
   }
 }
 @media (max-width: 576px) {
@@ -328,9 +410,7 @@ export default {
   .text-left p {
     font-size: medium;
   }
-  .card{
-    width: 200px;
-  }
+
 }
 @media (max-width: 300px) {
   .home h1{
@@ -338,6 +418,9 @@ export default {
   }
   .home h3{
     font-size: 14px;
+  }
+  .card{
+    width: 200px;
   }
 }
 

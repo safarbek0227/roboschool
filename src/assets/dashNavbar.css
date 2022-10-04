@@ -61,6 +61,9 @@ nav {
     fill: var(--color);
     margin-top: 5px;
   }
+  nav ul svg{
+    fill: var(--color);
+  }
   .menu-bar i:hover {
     cursor: pointer;
   }
