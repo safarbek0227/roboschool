@@ -29,7 +29,7 @@ export default {
           },
           1080: {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 10,
           },
         },
       },
@@ -241,6 +241,11 @@ export default {
                 </p>
                 <p class="text-title">Autor</p>
               </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div>
+              
             </div>
           </swiper-slide>
         </swiper>

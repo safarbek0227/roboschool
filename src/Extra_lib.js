@@ -13,5 +13,18 @@ export   function addMeta(page_meta){
       }).forEach(tag => document.head.appendChild(tag));
     }
 
-
+export function notification(text, alertType, delay){
+  const newDiv  = document.createElement("div");
+  const newContent = document.createTextNode(text)
+  newDiv.className = `alert ${alertType}`
+  newDiv.appendChild(newContent);
+  const currentDiv = document.getElementById("div1");
+  document.querySelector('.notification').insertBefore(newDiv, currentDiv);        
+  setTimeout(() =>{
+    newDiv.classList.add('fade-right')
+    setTimeout(() =>{
+      newDiv.remove()
+    },delay * 1.1)
+  },delay)
+}
 

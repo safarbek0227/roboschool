@@ -24,6 +24,10 @@ export default {
       this.color = JSON.parse(localStorage.color);
       document.documentElement.className  = this.color ? 'light': 'dark'
     }
+    else{
+      this.color = window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.className = this.color ? "light" : "dark";
+    }
   },
 };
 </script>

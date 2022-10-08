@@ -1,6 +1,6 @@
 <script>
 import debounce from "lodash.debounce";
-
+import { notification } from "@/Extra_lib";
 export default {
   mounted() {
     window.addEventListener("scroll", this.onScroll);
@@ -39,18 +39,7 @@ export default {
 
     copy() {
       navigator.clipboard.writeText(this.$refs.codeblock.innerText);
-      const newDiv  = document.createElement("div");
-      const newContent = document.createTextNode("Copied to clipboard! 🎉")
-      newDiv.className = 'alert success-alert'
-      newDiv.appendChild(newContent);
-      const currentDiv = document.getElementById("div1");
-      document.querySelector('.notification').insertBefore(newDiv, currentDiv);        
-      setTimeout(() =>{
-        newDiv.classList.add('fade-right')
-        setTimeout(() =>{
-          newDiv.remove()
-        },1500)
-      },1500)
+      notification('Copied to clipboard! 🎉', 'success-alert', 1500)
     },
   },
 };
@@ -121,7 +110,7 @@ export default {
                   </div>
                   <i class="fa-regular fa-copy" @click="copy"></i>
                 </div>
-                <div class="card__content" ref="codeblock" @click="copy">
+                <div class="card__content" ref="codeblock">
                   <pre><code>
 void setup() { 
   // put your setup code here, to run once: 
