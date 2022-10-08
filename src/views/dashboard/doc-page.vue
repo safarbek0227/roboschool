@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { addMeta } from "@/addmeta";
+import { addMeta } from "@/Extra_lib";
 const Meta = {
   title: "Roboschool- Online kurslar 2",
   metaTags: [

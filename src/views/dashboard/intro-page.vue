@@ -11,7 +11,6 @@ export default {
     onScroll: debounce(function () {
       this.setActiveHash();
     }),
-
     setActiveHash() {
       let sidebarLinks = [].slice.call(
         document.querySelectorAll(".sidebar-links")
@@ -36,6 +35,22 @@ export default {
           sidebarLinks[i].classList.add("hash-active");
         }
       }
+    },
+
+    copy() {
+      navigator.clipboard.writeText(this.$refs.codeblock.innerText);
+      const newDiv  = document.createElement("div");
+      const newContent = document.createTextNode("Copied to clipboard! 🎉")
+      newDiv.className = 'alert success-alert'
+      newDiv.appendChild(newContent);
+      const currentDiv = document.getElementById("div1");
+      document.querySelector('.notification').insertBefore(newDiv, currentDiv);        
+      setTimeout(() =>{
+        newDiv.classList.add('fade-right')
+        setTimeout(() =>{
+          newDiv.remove()
+        },1500)
+      },1500)
     },
   },
 };
@@ -91,20 +106,33 @@ export default {
             </div>
             <div class="step-content" id="div4">
               <h2>Code</h2>
-              <div>
-                <pre class="language-javascript">
-                <code>
-                  let isPalindrome = (word) => {
-                  let [length, result] = [word.length, true];
-                  for (let i = 0; i &lt; length / 2; i++) {
-                  if (word[i] !== word[length - 1 - i]) result = false;
-                  }
-                  return result;
-                  }
-                  module.exports = isPalindrome;
-                  </code>
-                  </pre>
+              <div class="code-card">
+                <div class="tools">
+                  <div class="circle-content">
+                    <div class="circle">
+                      <span class="red box"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="yellow box"></span>
+                    </div>
+                    <div class="circle">
+                      <span class="green box"></span>
+                    </div>
+                  </div>
+                  <i class="fa-regular fa-copy" @click="copy"></i>
                 </div>
+                <div class="card__content" ref="codeblock" @click="copy">
+                  <pre><code>
+void setup() { 
+  // put your setup code here, to run once: 
+}
+
+void loop() {
+    // put your main code here, to run repeatedly:
+}
+                </code></pre>
+                </div>
+              </div>
             </div>
             <div class="step-content" id="div5">
               <h2>Arduino Nima</h2>
@@ -243,6 +271,9 @@ img {
   .section .card {
     padding: 5px;
   }
+  .information .step-content {
+    padding: 0px;
+}
 }
 
 .sticky ul {
@@ -271,5 +302,56 @@ img {
 }
 .associate-section {
   display: flex;
+}
+
+.code-card {
+  width: 100%;
+  height: auto;
+  padding: 15px 35px;
+  background-color: var(--nav-color);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px;
+}
+.circle-content {
+  display: flex;
+}
+
+.code-card .card__content {
+  overflow: auto;
+  padding: 20px;
+  color: var(--color);
+  font-size: larger;
+  font-style: oblique;
+}
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
 }
 </style>

@@ -47,7 +47,7 @@ body {
     color: var(--color)
 }
 .page{
-    padding: 100px 5px  0 ;
+    padding: 80px 5px  0 ;
     justify-content: normal ;
 }
 .text-gradient {
@@ -64,3 +64,41 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
 }
+
+
+.notification{
+    position: fixed;
+    top: 100px;
+    right: 25px;
+}
+.alert{
+    transition: all 1s ease-in-out;
+    background-color: var(--nav-color);
+    margin:20px auto;
+    padding:30px;
+    border-radius:5px;
+    box-shadow:0 0 15px 5px #ccc;
+  }
+  .alert span{
+    margin-right: 15px;
+  }
+  .close{
+    position:absolute;
+    width:30px;
+    height:30px;
+    opacity:0.5;
+    border-width:1px;
+    border-style:solid;
+    border-radius:50%;
+    right:10px;
+    top:25px;
+    text-align:center;
+    font-size:1.6em;
+    cursor:pointer;
+  }
+  .alert.success-alert{
+    border-left: 5px solid #42b983;
+  }
+  .alert.fade-right{
+    transform: translateX(300px);
+  }

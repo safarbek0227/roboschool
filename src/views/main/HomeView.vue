@@ -373,7 +373,7 @@ export default {
 
 /*Hover*/
 .card:hover .card-img {
-  --size: 150px;
+  --size: 130px;
   width: var(--size);
   height: var(--size);
 }
