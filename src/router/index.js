@@ -23,30 +23,23 @@ const routes = [
     },
     children: [
       {
-        path: '',
+        path: '/',
         name: 'home',
         component: () => import('@/views/main/HomeView.vue')
       },
       {
-        path: 'about',
+        path: 'about/',
         name: 'about',
         component: () => import('../views/main/AboutView.vue')
       },
-      {
-        path: 'shop',
-        name: 'shop',
-        component: () => import('../views/main/ShopView.vue')
-      },
-
     ]
   },
   {
-    
-    path: '/learn',
-    component: () => import('../components/DashNavbar.vue'),
-    name: 'learn',
+    path: '/shop',
+    component: () => import('@/views/shop/shopView.vue'),
+    name: 'shop',
     meta: {
-      title: 'Roboschool- Online kurslar',
+      title: 'Roboshop',
       metaTags: [
         {
           name: 'author',
@@ -54,7 +47,7 @@ const routes = [
         },
         {
           property: 'description',
-          content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
+          content: "Roboshop online sotuv bolimi"
         },
         {
           property: 'og:image',
@@ -62,6 +55,12 @@ const routes = [
         }
       ]
     },
+  },
+  {
+    path: '/learn',
+    component: () => import('../components/DashNavbar.vue'),
+    name: 'learn/',
+
     children: [
       {
         path:'',
@@ -69,7 +68,7 @@ const routes = [
         component: () => import('../views/dashboard/intro-page.vue')
       },
       {
-        path: ':slug',
+        path: ':slug/',
         name: 'docs',
         component: () => import('../views/dashboard/doc-page.vue'),
       }

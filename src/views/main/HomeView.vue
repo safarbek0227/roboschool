@@ -1,7 +1,6 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import debounce from "lodash.debounce";
 // Import Swiper styles
 import "swiper/css";
 
@@ -20,14 +19,18 @@ export default {
           },
           576: {
             slidesPerView: 2,
-            spaceBetween: 50,
+            spaceBetween: 10,
           },
 
           768: {
-            slidesPerView: 3,
-            spaceBetween: 100,
+            slidesPerView: 2,
+            spaceBetween: 50,
           },
           1080: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          1440: {
             slidesPerView: 4,
             spaceBetween: 10,
           },
@@ -41,30 +44,6 @@ export default {
   },
   setup() {
     return {};
-  },
-    mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    this.onScroll();
-  },
-
-  methods: {
-    onScroll: debounce(function () {
-      this.setActiveHash();
-    }),
-
-    setActiveHash() {
-      let anchors = [].slice
-        .call(document.querySelectorAll(".page > div"))
-
-      for (let i = 0; i < anchors.length; i++) {
-        if (
-          window.pageYOffset >= anchors[i].offsetTop - 100  &&
-          window.pageYOffset <= anchors[i].offsetTop + anchors[i].scrollHeight
-        ) {
-          history.pushState({}, "", "#" + anchors[i].id);
-        }
-      }
-    },
   },
 };
 </script>
@@ -161,12 +140,13 @@ export default {
       </div>
       <div class="Author container" id="author">
         <br />
+        <br>
+        <br>
         <h1>Our team</h1>
-        <br />
         <swiper
-          :watchSlidesProgress="true"
-          :slidesPerView="4"
+          :slidesPerView="'auto'"
           :breakpoints="swiperOptions.breakpoints"
+          :autoplay="true" 
           class="mySwiper"
         >
           <swiper-slide>
@@ -243,11 +223,6 @@ export default {
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide>
-            <div>
-              
-            </div>
-          </swiper-slide>
         </swiper>
       </div>
     </div>
@@ -262,7 +237,7 @@ export default {
   width: clamp(130px, 80%, 320px);
 }
 .page > div{
-  margin-top: 80px;
+  padding: 20px 0;
 }
 
 .special-sponsor {
@@ -311,8 +286,8 @@ export default {
 }
 
 
-.card {
-  width: 250px;
+.Author .card {
+  width: clamp(230px, 100%, 250px);
   height: 350px;
   background: var(--nav-color);
   overflow: visible;
@@ -322,7 +297,7 @@ export default {
   align-items: center;
 }
 
-.card-info {
+.Author .card-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -330,7 +305,7 @@ export default {
   padding: 0 1rem;
 }
 
-.card-img {
+.Author .card-img {
   --size: 100px;
   width: var(--size);
   height: var(--size);
@@ -341,14 +316,14 @@ export default {
   position: relative;
   transition: all 0.5s ease-in-out;
 }
-.card-img img{
+.Author .card-img img{
   width: var(--size); 
   height: var(--size); 
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
 }
 
-.card-img::before {
+.Author .card-img::before {
   content: "";
   border-radius: inherit;
   position: absolute;
@@ -361,14 +336,14 @@ export default {
 }
 
 /*Text*/
-.text-title {
+.Author .text-title {
   text-transform: uppercase;
   font-size: 18px;
   color: #42caff;
   letter-spacing: 0.05rem;
 }
 
-.text-body {
+.Author .text-body {
   font-size: 14px;
   text-align: center;
   color: #6f6d78;
@@ -377,7 +352,7 @@ export default {
 }
 
 /*Hover*/
-.card:hover .card-img {
+.Author .card:hover .card-img {
   --size: 130px;
   width: var(--size);
   height: var(--size);

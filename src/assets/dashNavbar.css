@@ -116,7 +116,7 @@ display: flex;
   margin-left: 10px;
 }
 .sidebar ul span{
-  color: var();
+  color: var(--color);
   line-height: 20px;
   font-size: 18px;
   font-weight: 700;
