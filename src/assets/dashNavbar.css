@@ -72,8 +72,11 @@ ul .rb-md-block {
   display: none;
 }
 
+nav .sidebar-controler{
+  display: none;
+}
 nav .menu-bar a.active {
-color: unset;
+  color: unset;
 }
 
 .content {
@@ -135,7 +138,7 @@ display: flex;
 }
 .page-data{
   /* background-color: #F2F4F5; */
-  width: calc(100vw - 280px);
+  width: calc(100vw - 320px);
   min-height: 100vh;
   margin-left: 300px;
   padding: 90px 5px;
@@ -144,6 +147,21 @@ display: flex;
 
 
 
+@media(max-width: 1200px){
+  nav .sidebar-controler{
+    display: block;
+  }
+  .sidebar {
+    left: -300px;
+  }
+  .sidebar.active{
+    left: 0;
+  }
+  .page-data{
+    width: 99vw;
+    margin-left: 0;
+  }
+}
 
 @media (max-width: 1080px) {
   nav {
@@ -164,6 +182,7 @@ display: flex;
     font-size: x-large;
   }
 }
+
 
 @media (max-width: 768px) {
   nav {
@@ -202,7 +221,7 @@ display: flex;
     background-color: var(--nav-color);
     padding: 20px 20px;
     bottom: 0;
-    box-shadow: -2px -1px 7px #eee;
+    box-shadow: -2px -1px 7px var(--shadow);
   }
   .menu-bar i{
     font-size: xx-large;
@@ -219,17 +238,10 @@ display: flex;
     display: block;
   }
   .sidebar {
-    left: -300px;
-    padding-bottom: 85px ;
-  }
-  .sidebar.active{
-    left: 0;
-  }
-  .page-data{
-    width: 100vw;
-    margin-left: 0;
+    padding-bottom: 80px;
   }
 }
+
 @media (max-width: 576px) {
 .menu-bar i{
   font-size: x-large;

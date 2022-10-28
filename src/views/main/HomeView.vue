@@ -231,7 +231,7 @@ export default {
 
 <style>
 .home {
-  margin-top: 80px;
+  margin-top: 20px;
 }
 .home img {
   width: clamp(130px, 80%, 320px);

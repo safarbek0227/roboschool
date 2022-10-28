@@ -13,15 +13,15 @@ export default {
         breakpoints: {
           0: {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 40,
           },
-          320: {
+          365: {
             slidesPerView: 2,
-            spaceBetween: 80,
+            spaceBetween: 150,
           },
           576: {
             slidesPerView: 2,
-            spaceBetween: 50,
+            spaceBetween: 80,
           },
 
           768: {
@@ -34,7 +34,38 @@ export default {
           },
           1440: {
             slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+        breakpoint: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          365: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          576: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+
+          768: {
+            slidesPerView: 2,
             spaceBetween: 80,
+          },
+          1080: {
+            slidesPerView: 3,
+            spaceBetween: 80,
+          },
+          1200: {
+            slidesPerView: 2,
+            spaceBetween: 80,
+          },
+          1440: {
+            slidesPerView: 3,
+            spaceBetween: 0,
           },
         },
       },
@@ -105,7 +136,7 @@ export default {
         </p>
       </div>
       <div class="row">
-        <div class="col-xl-8">
+        <div class="col-lg-8">
           <div class="information">
             <div class="step-content" ref="div1" id="intro">
               <h2>Arduino Nima</h2>
@@ -351,35 +382,35 @@ export default {
               </p>
               <br /><br /><br />
               <div class="row">
-                <div class="col-md-4">
+                <div class="col">
                   <div class="box-content">
                     <a href="">
                       <h4>try tutorial</h4>
                       <h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Minima, praesentium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Minima, praesentium.
                       </h6>
                     </a>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col">
                   <div class="box-content">
                     <a href="">
-                      <h4>Read Guide</h4>
+                      <h4>try tutorial</h4>
                       <h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Minima, praesentium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Minima, praesentium.
                       </h6>
                     </a>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col">
                   <div class="box-content">
                     <a href="">
-                      <h4>Check out example</h4>
+                      <h4>try tutorial</h4>
                       <h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Minima, praesentium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Minima, praesentium.
                       </h6>
                     </a>
                   </div>
@@ -388,7 +419,7 @@ export default {
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
+        <div class="col-lg-4 rb-md-none">
           <div class="sticky">
             <span class="text-gradient h3 rb-md-none">Bu sahifada</span>
             <ul class="rb-md-none">
@@ -442,9 +473,19 @@ export default {
         </div>
       </div>
     </div>
-    <section class="advertion col-md-8">
-      <div class="row">
-        <div class="col-md-4">
+    <section class="advertion col-xl-8 col-lg-11">
+      <swiper
+        :breakpoints="swiperOptions.breakpoint"
+        :pagination="{
+          clickable: true,
+        }"
+        :autoplay="{
+          delay: 1500,
+          disableOnInteraction: false,
+        }"
+        :modules="modules"
+      >
+        <swiper-slide>
           <div class="plan-card">
             <h2>Silver<span>For business services</span></h2>
             <div class="etiquet-price">
@@ -491,10 +532,10 @@ export default {
               </a>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
+        </swiper-slide>
+        <swiper-slide>
           <div class="plan-card">
-            <h2>Gold<span>For business services</span></h2>
+            <h2>gold<span>For business services</span></h2>
             <div class="etiquet-price">
               <p>254.99</p>
               <div></div>
@@ -539,10 +580,10 @@ export default {
               </a>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
+        </swiper-slide>
+        <swiper-slide>
           <div class="plan-card">
-            <h2>Platinum<span>For business services</span></h2>
+            <h2>platinum<span>For business services</span></h2>
             <div class="etiquet-price">
               <p>254.99</p>
               <div></div>
@@ -587,8 +628,8 @@ export default {
               </a>
             </div>
           </div>
-        </div>
-      </div>
+        </swiper-slide>
+      </swiper>
     </section>
   </div>
 </template>
@@ -641,16 +682,24 @@ a.linkActiveClass {
   width: clamp(130px, 80%, 600px);
 }
 .rb-md-none {
-  display: initial;
+  display: block;
 }
-@media (max-width: 768px) {
-  .rb-md-none {
-    display: none;
+@media (max-width: 1440px) {
+  .section .information {
+    padding: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .section .information {
+    padding: 20px 10%;
   }
 }
 @media (max-width: 992px) {
   .sticky {
     position: relative;
+  }
+  .rb-md-none {
+    display: none;
   }
 }
 @media (max-width: 576px) {
@@ -659,6 +708,10 @@ a.linkActiveClass {
   }
   .information .step-content {
     padding: 80px 0px;
+  }
+  .section .information {
+    border-right: none;
+    padding: 20px;
   }
 }
 
@@ -724,10 +777,11 @@ a.linkActiveClass {
 
 .code-card .card__content {
   overflow: auto;
-  padding: 20px;
+  padding: 10px;
   color: var(--color);
   font-size: larger;
   font-style: oblique;
+  overflow: auto;
 }
 .circle {
   padding: 0 4px;
@@ -761,10 +815,13 @@ a.linkActiveClass {
 }
 
 .robo-detail .swiper-slide {
-  padding: 25px;
+  padding: 25px 0;
 }
 .robo-detail .swiper {
   padding: 20px;
+}
+.swiper {
+  padding: 25px 0;
 }
 .detail.card {
   width: 190px;
@@ -835,7 +892,8 @@ a.linkActiveClass {
   background-color: #42b983;
 }
 .box-content {
-  height: 250px;
+  width: 100%;
+  margin: 15px 0;
   background-color: var(--nav-color);
   color: var(--color);
   padding: 28px 36px;
@@ -851,21 +909,30 @@ a.linkActiveClass {
   color: var(--color);
 }
 .box-content:hover {
-  transition: all 0.3s ease-in;
-  border: 1px solid #42b983;
+  border: #42b983 1px solid;
 }
+/* @media (max-width: 1200px) {
+  .box-content {
+    width: 12rem;
+    padding: 25px;
+  }
+}
+@media (max-width: 576px) {
+  .box-content {
+    min-height: 250px;
+    padding: 25px 15px;
+  }
+} */
 
-
-.advertion{
+.advertion {
+  display: block;
   margin: 20px 5%;
 }
 .advertion .plan-card {
   background: var(--nav-color);
   width: 15rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding: 20px 2rem 20px 2rem;
+  margin: 25px 0;
   border-radius: 10px;
   border-bottom: 4px solid #000446;
   box-shadow: 0 6px 30px var(--shadow);
@@ -880,7 +947,6 @@ a.linkActiveClass {
 
 .advertion .plan-card h2 span {
   display: block;
-  margin-top: -4px;
   color: var(--hight-light);
   font-size: 12px;
   font-weight: 400;
@@ -891,13 +957,13 @@ a.linkActiveClass {
   background: #fdbd4a;
   width: 14.46rem;
   margin-left: -0.65rem;
-  padding: .2rem 1.2rem;
+  padding: 0.2rem 1.2rem;
   border-radius: 5px 0 0 5px;
 }
 
 .advertion .etiquet-price p {
   margin: 0;
-  padding-top: .4rem;
+  padding-top: 0.4rem;
   display: flex;
   font-size: 1.9rem;
   font-weight: 500;
@@ -941,14 +1007,14 @@ a.linkActiveClass {
 .advertion .benefits-list ul li {
   color: var(--hight-light);
   list-style: none;
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .advertion .benefits-list ul li svg {
-  width: .9rem;
+  width: 0.9rem;
   fill: currentColor;
 }
 
@@ -971,8 +1037,8 @@ a.linkActiveClass {
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
-  font-size: .8rem;
-  letter-spacing: .05rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
   font-weight: 500;
   transition: all 0.3s ease;
 }
@@ -984,7 +1050,23 @@ a.linkActiveClass {
 
 .advertion .button-get-plan .svg-rocket {
   margin-right: 10px;
-  width: .9rem;
+  width: 0.9rem;
   fill: currentColor;
+}
+@media (max-width: 1200px) {
+  .advertion {
+    margin: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .advertion {
+    padding: 10px;
+  }
+  .advertion .etiquet-price {
+    width: 13.46rem;
+  }
+  .advertion .plan-card {
+    width: 14rem;
+  }
 }
 </style>

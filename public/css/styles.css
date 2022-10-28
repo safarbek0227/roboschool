@@ -119,3 +119,9 @@ body {
     display: inline-block;
     margin: 5px;
   }
+
+  @media (max-width: 768px){
+    #app{
+      overflow-x: hidden;
+    }
+  }
