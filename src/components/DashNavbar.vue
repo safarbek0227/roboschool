@@ -17,7 +17,7 @@
       <router-link to="/">
         <i class="fa-regular fa-home rb-md-block"></i>
       </router-link>
-      <router-link to="/about">
+      <router-link to="/shop">
         <i class="fa-regular fa-cart-flatbed-boxes"></i>
       </router-link>
       <i
@@ -110,7 +110,7 @@
 
 
 <script>
-// import '@/assets/dashNavbar.css'
+import '@/assets/dashNavbar.css'
 export default {
   data() {
     return {
@@ -143,15 +143,4 @@ export default {
 };
 </script>
 
-<style>
-@import url("@/assets/dashNavbar.css");
-
-.site-control{
-  display:flex;
-}
-.site-control > *{
-  margin: 10px;
-  font-size: 25px;
-}
-</style>
 

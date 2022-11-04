@@ -1,5 +1,6 @@
 
 <script>
+import '@/assets/navbar.css'
 export default {
   data() {
     return {
@@ -43,7 +44,7 @@ export default {
         <router-link to="/">Home</router-link>
       </li>
       <li><router-link to="/learn">Learn</router-link></li>
-      <li><router-link to="/shop">Shop</router-link></li>
+      <li><router-link :to="{name: 'shop'}">Shop</router-link></li>
       <li><router-link to="/about">New</router-link></li>
       <li><router-link to="/about">{{this.color ? 'light': 'dark'}}</router-link></li>
       <li class="site-control">
@@ -129,96 +130,4 @@ export default {
   </footer>
 </template>
 
-<style>
-@import url("@/assets/navbar.css");
-footer form{
-  margin-top: 25px;
-  display: flex;
-  border-radius: 8px;
-  padding: 8px 5px;
-  font-size: 16px;
-  transition:all 0.8s;
-  border: 1px solid var(--color);
-  border-radius: 5px;
-  justify-content: space-between;
-}
-footer .container{
-  margin: 0 auto;
-  max-width: 700px;
-}
-footer p{
-  margin: 5px 0;
-}
-.input-group {
-  margin-top: 25px;
-  width: 100%;
-}
 
-.input {
-  min-height: 50px;
-  width: 75%;
-  padding: 0 1rem;
-  color: var(--color);
-  font-size: 15px;
-  border: 1px solid #42b983;
-  border-radius: 6px 0 0 6px;
-  background-color: transparent;
-}
-
-.button--submit {
-  width: 25%;
-  min-height: 50px;
-  padding: .5em 1em;
-  border: none;
-  border-radius: 0 6px 6px 0;
-  background-color: #42b983;
-  color: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color .3s ease-in-out;
-}
-.settings{
-  display: flex;
-  align-items: center;
-}
-.site-control{
-  display:flex;
-  justify-content: center;
-}
-.site-control > *{
-  margin: 10px;
-}
-@media (max-width: 768px) {
-  .rb-md-none {
-    display: none;
-  }
-}
-@media (max-width: 576px){
-  .button--submit {
-    width: 40%;
-  }
-  .input {
-    width: 60%;
-  }
-}
-@media (max-width: 300px){
-  .button--submit {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 6px;
-  }
-  .input {
-    border-radius: 6px;
-    width: 100%;
-  }
-}
-.button--submit:hover {
-  background-color: #42b983;
-}
-
-.input:focus, .input:focus-visible {
-  border-color: #42b983;
-  outline: none;
-}
-
-</style>

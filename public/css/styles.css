@@ -16,6 +16,10 @@
     --hight-light: #3c3c3cb3;
     --border-color: #e8e8e8;
 }
+::selection {
+  background-color: #42b983;
+  color: #fff;
+}
 html{
     transition: background 0.1s, color 0.1s;
 }

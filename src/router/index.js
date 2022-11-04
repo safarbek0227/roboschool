@@ -38,8 +38,13 @@ const routes = [
     path: '/shop',
     component: () => import('@/views/shop/shopView.vue'),
     name: 'shop',
+  },
+  {
+    path: '/learn',
+    component: () => import('../components/DashNavbar.vue'),
+    name: 'learn',
     meta: {
-      title: 'Roboshop',
+      title: 'Roboschool- Online kurslar',
       metaTags: [
         {
           name: 'author',
@@ -47,7 +52,7 @@ const routes = [
         },
         {
           property: 'description',
-          content: "Roboshop online sotuv bolimi"
+          content: "Roboschool online robotextnikani O'rganish uchun en yaxshi tanlov"
         },
         {
           property: 'og:image',
@@ -55,11 +60,6 @@ const routes = [
         }
       ]
     },
-  },
-  {
-    path: '/learn',
-    component: () => import('../components/DashNavbar.vue'),
-    name: 'learn/',
 
     children: [
       {

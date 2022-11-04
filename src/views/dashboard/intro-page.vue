@@ -41,14 +41,17 @@ export default {
           0: {
             slidesPerView: 1,
             spaceBetween: 0,
+            centeredSlides: false, 
           },
           365: {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
             spaceBetween: 0,
+            centeredSlides: true, 
           },
           576: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 0,
+            centeredSlides: true, 
           },
 
           768: {
@@ -473,7 +476,7 @@ export default {
         </div>
       </div>
     </div>
-    <section class="advertion col-xl-8 col-lg-11">
+    <section class="advertion col-xl-10 col-lg-12">
       <swiper
         :breakpoints="swiperOptions.breakpoint"
         :pagination="{
@@ -909,7 +912,7 @@ a.linkActiveClass {
   color: var(--color);
 }
 .box-content:hover {
-  border: #42b983 1px solid;
+  box-shadow: 0px 0px 0px 3px #00ca4e;
 }
 /* @media (max-width: 1200px) {
   .box-content {

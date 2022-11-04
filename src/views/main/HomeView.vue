@@ -256,7 +256,6 @@ export default {
   color: var(--hight-light);
 }
 .special-sponsor img {
-  width: 40px;
   height: 40px;
 }
 .logo-content {
