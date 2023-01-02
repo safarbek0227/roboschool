@@ -41,17 +41,17 @@ export default {
           0: {
             slidesPerView: 1,
             spaceBetween: 0,
-            centeredSlides: false, 
+            centeredSlides: false,
           },
           365: {
             slidesPerView: 1.5,
             spaceBetween: 0,
-            centeredSlides: true, 
+            centeredSlides: true,
           },
           576: {
             slidesPerView: 2,
             spaceBetween: 0,
-            centeredSlides: true, 
+            centeredSlides: true,
           },
 
           768: {
@@ -61,14 +61,17 @@ export default {
           1080: {
             slidesPerView: 3,
             spaceBetween: 80,
+            centeredSlides: false,
           },
           1200: {
             slidesPerView: 2,
             spaceBetween: 80,
+            centeredSlides: false,
           },
           1440: {
             slidesPerView: 3,
             spaceBetween: 0,
+            centeredSlides: false,
           },
         },
       },
@@ -390,8 +393,8 @@ export default {
                     <a href="">
                       <h4>try tutorial</h4>
                       <h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Minima, praesentium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Minima, praesentium.
                       </h6>
                     </a>
                   </div>
@@ -401,8 +404,8 @@ export default {
                     <a href="">
                       <h4>try tutorial</h4>
                       <h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Minima, praesentium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Minima, praesentium.
                       </h6>
                     </a>
                   </div>
@@ -412,8 +415,8 @@ export default {
                     <a href="">
                       <h4>try tutorial</h4>
                       <h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Minima, praesentium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Minima, praesentium.
                       </h6>
                     </a>
                   </div>
@@ -637,7 +640,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 a.linkActiveClass {
   color: black;
 }

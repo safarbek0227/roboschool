@@ -108,9 +108,7 @@ export default {
       </div>
       </div>
       <div class="sponsor container" id="sponsor">
-        <br><br>
-        <h1>Our sponsor</h1>
-        <br><br>
+        <h1 class="mt-5 mb-5">Our sponsor</h1>
         <div class="row">
           <a href="http://" class="col-6 col-sm-6 col-md-4 col-lg-4">
             <img src="/images/roboschool.png" alt="">
@@ -229,7 +227,7 @@ export default {
   </transition>
 </template>
 
-<style>
+<style scoped>
 .home {
   margin-top: 20px;
 }

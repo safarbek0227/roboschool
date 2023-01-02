@@ -79,7 +79,9 @@
   <br>
 <br><br><br><br><br>
 <h1>im shp page</h1>
-  <footer>
+
+<footer>
+  
     <div class="container">
       <h6>Subscribe to our weekly newsletter.</h6>
       <div class="input-group">
@@ -92,3 +94,295 @@
     </div>
   </footer>
 </template>
+
+<style scoped>
+nav {
+  width: 100vw;
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #42b983;
+  background: var(--theme);
+  color: var(--color);
+  padding: 5px 100px 5px 100px;
+  z-index: 900;
+}
+
+nav a {
+  /* font-family: "Kaushan Script", cursive !important; */
+}
+
+nav img {
+  height: 60px;
+  display: inline;
+}
+
+nav span {
+  font-size: 32px;
+}
+
+nav ul {
+  display: flex;
+  font-size: x-large;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+nav a:hover {
+  text-decoration: unset;
+  color: unset;
+}
+
+nav a.active {
+  color: #42b983;
+}
+
+nav .menu-bar {
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar i {
+  color: var(--color);
+  font-size: x-large;
+  margin: 0px 6px;
+}
+nav .menu-bar svg{
+  fill: var(--color);
+  margin-top: 5px;
+}
+nav ul svg{
+  fill: var(--color);
+}
+.menu-bar i:hover {
+  cursor: pointer;
+}
+nav .rb-md-block {
+  display: none;
+}
+
+nav .menu-bar a.active {
+  color: unset;
+}
+footer{
+  width: 100vw;
+  margin: 50px 0 0 0;
+  padding: 50px 15px;
+  background: var(--shadow);
+} 
+@media (max-width: 1080px) {
+  nav {
+    padding: 5px 45px;
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav img {
+    height: 50px;
+  }
+
+  nav span {
+    font-size: 22px;
+  }
+
+  nav ul li {
+    margin: 0 5px;
+  }
+
+  nav a {
+    font-size: large;
+  }
+
+  .menu-bar i {
+    font-size: x-large;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px;
+    z-index: 8;
+    height: 90px;
+    justify-content: center;
+  }
+
+  nav img {
+    height: 60px;
+  }
+
+  nav span {
+    font-size: xx-large;
+  }
+
+  nav ul {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    flex-direction: column;
+    margin: 0;
+    padding: 15px;
+    background: var(--theme); 
+    box-shadow: 5px 8px 12px  var(--shadow);
+    z-index: -99;
+    border-top: 1px solid #42b983;
+    top: 90px;
+    left: -300px;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 15px 10px;
+  }
+
+  nav a {
+    font-size: x-large;
+  }
+
+  nav .menu-bar {
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    justify-content: space-around;
+    background: var(--theme); 
+    padding: 20px 20px;
+    bottom: 0;
+    box-shadow: -2px -1px 7px var(--shadow);
+  }
+  .menu-bar i{
+    font-size: xx-large;
+  }
+
+  nav .menu-bar a.active {
+    color: #42b983;
+    background-color:  var(--shadow);
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.2s;
+  }
+
+  nav .rb-md-block {
+    display: block;
+  }
+  footer{
+    margin: 0 0 60px;
+  }
+}
+@media (max-width: 576px) {
+  .menu-bar i{
+    font-size: x-large;
+  }
+  
+}
+
+footer form{
+  margin-top: 25px;
+  display: flex;
+  border-radius: 8px;
+  padding: 8px 5px;
+  font-size: 16px;
+  transition:all 0.8s;
+  border: 1px solid var(--color);
+  border-radius: 5px;
+  justify-content: space-between;
+}
+footer .container{
+  margin: 0 auto;
+  max-width: 700px;
+}
+footer p{
+  margin: 5px 0;
+}
+.input-group {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.input {
+  min-height: 50px;
+  width: 75%;
+  padding: 0 1rem;
+  color: var(--color);
+  font-size: 15px;
+  border: 1px solid #42b983;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button--submit {
+  width: 25%;
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #42b983;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+.settings{
+  display: flex;
+  align-items: center;
+}
+.site-control{
+  display:flex;
+  justify-content: center;
+}
+.site-control > *{
+  margin: 10px;
+}
+@media (max-width: 768px) {
+  .rb-md-none {
+    display: none;
+  }
+}
+@media (max-width: 576px){
+  .button--submit {
+    width: 40%;
+  }
+  .input {
+    width: 60%;
+  }
+}
+@media (max-width: 300px){
+  .button--submit {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+  .input {
+    border-radius: 6px;
+    width: 100%;
+  }
+}
+.button--submit:hover {
+  background-color: #42b983;
+}
+
+.input:focus, .input:focus-visible {
+  border-color: #42b983;
+  outline: none;
+}
+</style>

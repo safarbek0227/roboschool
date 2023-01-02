@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
+  // Main views 
   {
     path: '/',
     component: () => import('../components/MainNavbar.vue'),
@@ -34,11 +35,15 @@ const routes = [
       },
     ]
   },
+
+  // Shop views
   {
     path: '/shop',
-    component: () => import('@/views/shop/shopView.vue'),
+    component: () => import('@/components/ShopBar.vue'),
     name: 'shop',
   },
+
+  // Learn views 
   {
     path: '/learn',
     component: () => import('../components/DashNavbar.vue'),
@@ -79,7 +84,6 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  mode: 'hash',
   routes,
   linkActiveClass: "active", // active class for non-exact links.
   linkExactActiveClass: "active", // active class for *exact* links.
