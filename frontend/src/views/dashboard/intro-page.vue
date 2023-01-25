@@ -40,17 +40,17 @@ export default {
         breakpoint: {
           0: {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 1,
             centeredSlides: false,
           },
           365: {
-            slidesPerView: 1.5,
-            spaceBetween: 0,
+            slidesPerView: 1,
+            spaceBetween: 1,
             centeredSlides: true,
           },
           576: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 2,
             centeredSlides: true,
           },
 
@@ -239,12 +239,8 @@ export default {
               <swiper
                 :slidesPerView="'auto'"
                 :breakpoints="swiperOptions.breakpoints"
-                :loop="true"
+                :loop="false"
                 :centeredSlides="true"
-                :autoplay="{
-                  delay: 1500,
-                  disableOnInteraction: false,
-                }"
                 :pagination="{
                   clickable: true,
                 }"
