@@ -150,7 +150,7 @@ export default {
           <swiper-slide>
             <div class="card">
               <div class="card-img">
-                <img src="@/assets/owner.jpg" alt="">
+                <img src="" alt="">
               </div>
               <div class="card-info">
                 <p class="text-body">
