@@ -9,9 +9,9 @@
     letter-spacing: 1px;
 }
 :root{
-    --theme: #F2F4F5;
-    --color: #2c3e50;
-    --nav-color: #F8FBFE;
+    --theme: #FFF7ED;
+    --color: #13161F;
+    --nav-color: #fff;
     --shadow: #eee;
     --hight-light: #3c3c3cb3;
     --border-color: #e8e8e8;
@@ -25,7 +25,7 @@ html{
 }
 html.dark{
     transition: background 0.1s, color 0.1s;
-    --theme: #1a1a1a;
+    --theme: #13161F;
     --color: #ffffffde ;
     --nav-color: #0E0D11;
     --shadow: #282828;

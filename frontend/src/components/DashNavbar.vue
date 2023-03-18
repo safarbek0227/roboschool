@@ -153,7 +153,7 @@ nav {
   justify-content: space-between;
   border-bottom: 1px solid #42b983;
   border-bottom-right-radius: 45px;
-  background: var(--theme); 
+  background: var(--nav-color);
   padding: 15px 100px 15px 25px;
   z-index: 90;
 }
@@ -224,7 +224,9 @@ nav .menu-bar a.active {
 }
 
 .content {
-display: flex;
+  display: flex;
+  max-width: 2000px;
+  margin: auto;
 }
 .sidebar {
   position: -webkit-fixed;
@@ -287,6 +289,7 @@ display: flex;
   margin-left: 300px;
   padding: 90px 5px;
   text-align: left;
+  max-width: 2000px;
 }
 
 

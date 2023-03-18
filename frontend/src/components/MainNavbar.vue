@@ -140,7 +140,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #42b983;
-  background: var(--theme);
+  background: var(--nav-color);
   color: var(--color);
   padding: 5px 100px 5px 100px;
   z-index: 900;
