@@ -9,7 +9,7 @@
     letter-spacing: 1px;
 }
 :root{
-    --theme: #FFF7ED;
+    --theme: #F2F4F5;
     --color: #13161F;
     --nav-color: #fff;
     --shadow: #eee;
@@ -46,7 +46,6 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: "Kaushan Script", cursive !important;
     background: var(--theme);
     color: var(--color)
 }

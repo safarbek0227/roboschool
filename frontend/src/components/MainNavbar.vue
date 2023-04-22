@@ -40,12 +40,12 @@ export default {
     </a>
     <ul :class="[navbar ? '' : 'active', '']">
       <li>
-        <router-link to="/">Home</router-link>
+        <router-link to="/">Bosh sahifa</router-link>
       </li>
-      <li><router-link to="/learn">Learn</router-link></li>
-      <li><router-link :to="{name: 'shop'}">Shop</router-link></li>
-      <li><router-link to="/about">New</router-link></li>
-      <li><router-link to="/about">{{this.color ? 'light': 'dark'}}</router-link></li>
+      <li><router-link to="/learn">Darsliklar</router-link></li>
+      <li><router-link to="/shop">Xarid qilish</router-link></li>
+      <li><router-link to="/news">Yangiliklar</router-link></li>
+      <li><router-link to="/contact">Bog'lanish</router-link></li>
       <li class="site-control">
         <i class="fa-duotone rb-md-block"  :class="[color ? 'fa-sun' : 'fa-moon']" @click="toggleTheme" ></i>
         <a href="#" class="rb-md-block">
@@ -103,28 +103,29 @@ export default {
       <router-link to="/">
         <i class="fa-regular fa-home rb-md-block"></i>
       </router-link>
-      <i class="fa-regular fa-cog rb-md-block" ></i>
+      <router-link to="/learn">
+        <i class="fa-regular fa-book rb-md-block" ></i>
+      </router-link>
       <i class="fa-regular rb-md-block"
         :class="[navbar ? 'fa-bars' : 'fa-x']"
         @click="this.navbar = !this.navbar"
       ></i>
     </div>
   </nav>
+
   <router-view v-slot="{ Component }" @click="this.navbar = true">
     <transition name="scale" mode="out-in">
       <component :is="Component" />
     </transition>
   </router-view>
+
   <footer>
     <div class="container">
-      <h6>Subscribe to our weekly newsletter.</h6>
-      <div class="input-group">
-        <input type="email" class="input" id="Email" name="Email" placeholder="Email address" autocomplete="off">
-        <input class="button--submit" value="Subscribe" type="submit">
-      </div>
+      
+      <p>Texnologiya olamidagi so'ngi yangiliklarni ushbu sahifada <a href="">RoboSchool.uz/News</a> .</p>
+      <p>Bizni <a href="">telegram</a> va <a href="">instagram</a>da kuzatib boring.</p>
       <br>
-      <p>You can read the previous issues and listen to our podcast at <a href="">RoboSchool.uz/News</a> .</p>
-      <p>You may also go social at <a href="">telegram</a>, or join our home at <a href="">instagram</a>.</p>
+      <h4>©2023 <a href="">Safarbek</a></h4>
     </div>
   </footer>
 </template>
@@ -142,7 +143,7 @@ nav {
   border-bottom: 1px solid #42b983;
   background: var(--nav-color);
   color: var(--color);
-  padding: 5px 100px 5px 100px;
+  padding: 5px 40px;
   z-index: 900;
 }
 
@@ -151,12 +152,12 @@ nav a {
 }
 
 nav img {
-  height: 60px;
+  height: 45px;
   display: inline;
 }
 
 nav span {
-  font-size: 32px;
+  font-size: 28px;
 }
 
 nav ul {
@@ -178,6 +179,7 @@ nav .logo {
 nav a {
   text-decoration: none;
   color: var(--color);
+  font-size: 20px;
 }
 
 nav a:hover {
@@ -233,10 +235,11 @@ footer{
   }
 
   nav img {
-    height: 50px;
+    height: 45px;
   }
 
   nav span {
+    display: none;
     font-size: 22px;
   }
 
@@ -249,7 +252,7 @@ footer{
   }
 
   .menu-bar i {
-    font-size: x-large;
+    font-size: large;
   }
 }
 
@@ -266,6 +269,7 @@ footer{
   }
 
   nav span {
+    display: block;
     font-size: xx-large;
   }
 
@@ -332,22 +336,11 @@ footer{
   
 }
 
-footer form{
-  margin-top: 25px;
-  display: flex;
-  border-radius: 8px;
-  padding: 8px 5px;
-  font-size: 16px;
-  transition:all 0.8s;
-  border: 1px solid var(--color);
-  border-radius: 5px;
-  justify-content: space-between;
-}
 footer .container{
   margin: 0 auto;
-  max-width: 700px;
 }
 footer p{
+  font-size: x-large;
   margin: 5px 0;
 }
 .input-group {

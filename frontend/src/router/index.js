@@ -33,15 +33,31 @@ const routes = [
         name: 'about',
         component: () => import('../views/main/AboutView.vue')
       },
+      {
+        path:'shop/',
+        name: 'shop-advert',
+        meta: {
+          title: 'Roboschool- Online dokoni',
+          metaTags: [
+            {
+              name: 'author',
+              content: 'Solijonov Safarbek'
+            },
+            {
+              property: 'description',
+              content: "Roboschool online robotextnikani O'rganish uchun eng yaxshi tanlov"
+            },
+            {
+              property: 'og:image',
+              content: "/logo.png"
+            }
+          ]
+        },
+        component: () => import('../views/shop/shopView.vue')
+      },
     ]
   },
 
-  // Shop views
-  {
-    path: '/shop',
-    component: () => import('@/components/ShopBar.vue'),
-    name: 'shop',
-  },
 
   // Learn views 
   {

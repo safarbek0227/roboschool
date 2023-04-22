@@ -2,7 +2,7 @@
 import debounce from "lodash.debounce";
 import stepComponetVue from '@/components/step-componet.vue';
 import sliderComponetVue from '@/components/slider-shop.vue';
-
+import imgTest from '@/assets/arduino.png'
 export default {
   data() {
     return {
@@ -11,7 +11,7 @@ export default {
           slug: 'intro',
           name: 'Arduino',
           linker: 'Intro',
-          image: '',
+          image: imgTest,
           is_code: false,
           title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur sit et quod iusto est quia recusandae at repellendus nihil? Culpa aspernatur deleniti itaque reiciendis consectetur modi voluptas, officiis ullam.'
         },
@@ -19,14 +19,14 @@ export default {
           slug: 'start',
           name: 'Arduino',
           linker: 'Start',
-          image: '',
+          image: imgTest,
           is_code: false,
           title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur sit et quod iusto est quia recusandae at repellendus nihil? Culpa aspernatur deleniti itaque reiciendis consectetur modi voluptas, officiis ullam.'
         },
         {
           slug: 'build',
           linker: 'Build',
-          image: '',
+          image: imgTest,
           is_code: false,
           name: 'Arduino',
           title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur sit et quod iusto est quia recusandae at repellendus nihil? Culpa aspernatur deleniti itaque reiciendis consectetur modi voluptas, officiis ullam.'
@@ -52,6 +52,7 @@ export default {
           slug: 'result',
           linker: 'Result',
           name: 'Result',
+          image: imgTest,
           is_code: false,
           title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur sit et quod iusto est quia recusandae at repellendus nihil? Culpa aspernatur deleniti itaque reiciendis consectetur modi voluptas, officiis ullam.'
         },
@@ -166,17 +167,10 @@ export default {
               :object="post" /> 
 
             <!-- Product -->
-            <sliderComponetVue :products='products' />           
-            <!-- Last section  -->
-            <div class="step-content" id="conclusion">
-                <h2>Arduino Nima</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Architecto tenetur sit et quod iusto est quia recusandae at
-                  repellendus nihil? Culpa aspernatur deleniti itaque reiciendis
-                  consectetur modi voluptas, officiis ullam.
-                </p>
-                <br /><br /><br />
+            <sliderComponetVue :products='products' />        
+
+            <br>   
+            <div class="step-content" style="margin-top: 80px;" id="conclusion">
                 <div class="row">
                   <div class="col">
                     <div class="box-content">
@@ -232,12 +226,6 @@ export default {
                 <a href="http://">
                   <img src="/images/roboschool.png" alt="" />
                 </a>
-                <a href="http://">
-                  <img src="/images/roboschool.png" alt="" />
-                </a>
-                <a href="http://">
-                  <img src="/images/roboschool.png" alt="" />
-                </a>
               </div>
             </div>
           </div>
@@ -256,7 +244,7 @@ a.linkActiveClass {
 }
 .section .information {
   padding: 20px 10%;
-  border-right: 0.5px solid #05050520;
+  border-right: 0.5px solid #05050550;
 }
 .first-intro {
   padding: 20px 5%;
@@ -300,9 +288,6 @@ a.linkActiveClass {
 @media (max-width: 576px) {
   .section .card {
     padding: 5px;
-  }
-  .information .step-content {
-    padding: 80px 0px;
   }
   .section .information {
     border-right: none;

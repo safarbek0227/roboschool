@@ -12,9 +12,9 @@ export default {
 </script>
 
 <template>
-  <div class="step-content" ref="div1" :id="object.slug">
+  <div class="step-content" :class="[object.is_code ? '' : 'card', '']" ref="div1" :id="object.slug">
     <h2>{{ object.name }}</h2>
-    <img src="@/assets/arduino.png" alt="" />
+    <img :src="object.image" :alt="object.name" :style="{'width': 'clamp(200px, 60%, 400px)'}" v-if="object.image" />
     <div v-html="object.title" class="h5" v-if="!object.is_code"></div>
 
     <div class="code-card" v-else>
@@ -38,12 +38,14 @@ export default {
     </div>
   </div>
 </template>
-<style >
+<style  scoped>
 .information .step-content{
-    padding: 55px;
-    margin: 55px 0;
     border-radius: 25px;
-    background-color: var(--nav-color);
+}
+.information .step-content.card{
+  padding: 55px;
+  margin: 55px 0;
+  background-color: var(--nav-color);
 }
 .step-content h2 {
   font-weight: 700;
@@ -64,7 +66,7 @@ export default {
   width: 100%;
   height: auto;
   padding: 15px 35px;
-  background-color: var(---color);
+  background-color: var(--nav-color);
   border-radius: 8px;
   z-index: 1;
 }
@@ -110,5 +112,20 @@ export default {
 
 .green {
   background-color: #00ca4e;
+}
+@media (max-width: 576px) {
+  .information .step-content.card{
+    padding: 30px;
+  }
+  .step-content h2{
+    font-size: x-large;
+  }
+  .step-content p{
+    font-size: medium;
+  }
+  .step-content .h5{
+    font-size: medium;
+  }
+  
 }
 </style>
